@@ -4,7 +4,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   validates :name, presence: true
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
-  validates_format_of :password, with: PASSWORD_REGEX, message: ' is invalid. Include both letters and numbers'
-  validates :department_name,  length: { maximum: 50 }, message: "is too long"
+  validates :encrypted_password,:password,:password_confirmation,length:{minimum:6},format:{with: /(?=.[a-zA-Z])(?=.\d)[a-zA-Z\d]{6,}/}
+  validates :department_name,  length: { maximum: 50 }
 end

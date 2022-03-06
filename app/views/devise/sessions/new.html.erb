@@ -1,20 +1,25 @@
+
+<%= form_with model: @user, url: user_session_path, class: 'registration-main', local: true do |f| %>
 <div class="form-wrapper">
   <h1>WELCOME</h1>
   <span>グルカレにようこそ！</span>
   <span>ログイン、もしくは新規登録を行ってください</span>
-  <form>
+  <%#= render 'shared/error_messages', model: f.object %>
+
     <div class="form-item">
-      <label for="email"></label>
-      <input type="email" name="email" required="required" placeholder="メールアドレス"></input>
+      <label class="form-text"></label>
+      <%= f.email_field :email, class:"input-default", id:"email", placeholder:"メールアドレス", autofocus: true %>
     </div>
+      
     <div class="form-item">
-      <label for="password"></label>
-      <input type="password" name="password" required="required" placeholder="パスワード"></input>
+      <label class="form-text"></label>
+      <%= f.password_field :password, class:"input-default", id:"password", placeholder:"パスワード" %>
     </div>
+
     <div class="button-panel">
-      <input type="submit" class="button" title="Sign In" value="ログイン"></input>
+      <%= f.submit "ログイン" ,class:"button" %>
     </div>
-  </form>
+  <% end %>
 
   
 

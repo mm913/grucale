@@ -1,3 +1,22 @@
+<%# 共通部分%>
+<header class="header">
+  <div class="header-left">
+    <ul class="lists">
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.name, root_path, class: "user-name" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="header-right">
+    <ul class="lists">
+      <li><%= link_to "グループ作成",'#', class: "new-group" %></li>
+      <li><%= link_to "グループ参加",'#', class: "login-group" %></li>
+    </ul>
+  </div> 
+</header>
+<%# 共通部分ここまで%>
+
 <div class="contents row">
   <p><%= @name %>さんの投稿一覧</p>
 </div>

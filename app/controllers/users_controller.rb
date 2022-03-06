@@ -1,6 +1,10 @@
 class UsersController < ApplicationController
 
-  def show    
+  def index
+  end
+  
+  def show
+    @name = current_user.name  
   end
 
 end

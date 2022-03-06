@@ -67,19 +67,22 @@ form {
   width: 100%;
 }
 
-
-.form-footer {
+.back-button {
+  border: none;
+  cursor: pointer;
+  height: 50px;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1em;
-  padding: 2em 0;
+  letter-spacing: 0.05em;
   text-align: center;
+  text-transform: uppercase;
+  transition: background 0.3s ease-in-out;
+  width: 100%;
+  margin-top: 10px;
+  padding-top: 10px;
 }
 
-.form-footer a {
-  color: #8c8c8c;
+.back_btn{
   text-decoration: none;
-  transition: border-color 0.3s;
-}
-
-.form-footer a:hover {
-  border-bottom: 1px dotted #8c8c8c;
+  color: #8c8c8c;
 }

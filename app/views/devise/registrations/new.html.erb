@@ -1,7 +1,7 @@
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
  <div class="form-wrapper">
   <h3>新規ユーザー登録</h3>
-  
+
   <%# エラーメッセージの部分テンプレート%>
   <%= render 'share/error_messages', model: f.object %>
 
@@ -40,3 +40,6 @@
     <%= f.submit "新規登録" ,class:"button" %>
   </div>
 <% end %>
+<div class="back-button">
+  <%= link_to "戻る", new_user_session_path, class:"back_btn" %>
+</div>

@@ -1,8 +1,9 @@
 <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do |f| %>
  <div class="form-wrapper">
   <h3>新規ユーザー登録</h3>
-
-  <%#= render 'shared/error_messages', model: f.object %>
+  
+  <%# エラーメッセージの部分テンプレート%>
+  <%= render 'share/error_messages', model: f.object %>
 
   <div class="form-group">
     <div class='form-item'>

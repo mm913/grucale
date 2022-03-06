@@ -4,7 +4,12 @@
 
 <div class="mypage">
   <div class="left-contents">
-    <p>プロフィール画像を表示</p>
+    <div class="image">
+      <p>プロフィール画像を表示</p>
+    </div>
+    <% if user_signed_in? && current_user %>
+    <%= link_to "マイページ編集",edit_user_path(:id), class: "compilation" %>
+    <% end %>
   </div>
   <div class="right-contents">
     <div class="user-name2">

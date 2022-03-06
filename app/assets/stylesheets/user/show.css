@@ -5,8 +5,19 @@
 .left-contents{
   width: 40vw;
   margin-top: 100px;
+}
+
+.image{
   display: flex;
   justify-content: center;
+}
+
+.compilation{
+  display: flex;
+  justify-content: center;
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
 }
 
 .user-name2{

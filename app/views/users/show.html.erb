@@ -1,22 +1,20 @@
 <%# 共通部分%>
-<header class="header">
-  <div class="header-left">
-    <ul class="lists">
-      <% if user_signed_in? %>
-        <li><%= link_to current_user.name, root_path, class: "user-name" %></li>
-        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="header-right">
-    <ul class="lists">
-      <li><%= link_to "グループ作成",'#', class: "new-group" %></li>
-      <li><%= link_to "グループ参加",'#', class: "login-group" %></li>
-    </ul>
-  </div> 
-</header>
+<%= render "share/header" %>
 <%# 共通部分ここまで%>
 
-<div class="contents row">
-  <p><%= @name %>さんの投稿一覧</p>
+<div class="mypage">
+  <div class="left-contents">
+    <p>プロフィール画像を表示</p>
+  </div>
+  <div class="right-contents">
+    <div class="user-name2">
+      <p><%= current_user.name %>のマイページ</p>
+    </div>
+    <div class="user-department">
+      <p>部署名：<%= current_user.department_name %></p>
+    </div>
+    <div class="group_name">
+      <p>参加中のグループ</p>
+    </div>
+  </div>
 </div>

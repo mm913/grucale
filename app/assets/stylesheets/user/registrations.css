@@ -67,9 +67,6 @@ form {
   width: 100%;
 }
 
-.button:hover {
-  background: hsl(61, 84%, 59%);
-}
 
 .form-footer {
   font-size: 1em;

@@ -5,7 +5,6 @@
 <div class="mypage">
   <div class="left-contents">
     <div class="image">
-      <p>プロフィール画像を表示</p>
     </div>
     <% if user_signed_in? && current_user %>
     <%= link_to "マイページ編集",edit_user_path(:id), class: "compilation" %>

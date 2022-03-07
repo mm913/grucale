@@ -5,6 +5,8 @@
 <div class="mypage">
   <div class="left-contents">
     <div class="image">
+    <%#= image_tag user.image, class: 'profile-image' if user.image.attached? %>
+    <%= image_tag current_user.image.variant(resize: '300x300'), class: 'profile-image' if current_user.image.attached? %>
     </div>
     <% if user_signed_in? && current_user %>
     <%= link_to "マイページ編集",edit_user_path(:id), class: "compilation" %>

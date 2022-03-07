@@ -7,4 +7,6 @@ class User < ApplicationRecord
   VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
   validates :password, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX }
   validates :department_name,  length: { maximum: 50 }
+
+  has_one_attached :image
 end

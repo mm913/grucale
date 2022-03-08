@@ -1,0 +1,49 @@
+.hello{
+  display: flex;
+  justify-content: center;
+}
+
+.message1{
+  display: flex;
+  justify-content: center;
+  color: rgb(47, 105, 191);
+}
+
+.message2{
+  display: flex;
+  justify-content: center;
+  color: rgb(47, 105, 191);
+}
+
+.center-display{
+  list-style:none;
+  padding-right: 50px;
+}
+
+.create-group{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #8c8c8c;
+  font-size: 20px;
+}
+
+.join-group{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #8c8c8c;
+  font-size: 20px;
+}
+
+.created-group{
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.no-group{
+  font-size: 20px;
+}

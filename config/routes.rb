@@ -3,6 +3,10 @@ Rails.application.routes.draw do
     registrations: 'users/registrations',
     sessions: 'users/sessions'
   }
-  root to: "users#show"
-  resources :users, only: [:show, :edit]
+  root to: "users#toppage"
+  resources :users, only: [:show, :edit]do
+    member do
+      patch 'toppage'
+    end
+  end
 end

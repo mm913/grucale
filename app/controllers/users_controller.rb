@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  def toppage
+  end
+  
   def show
     #@user = User.find(params[:id])
   end

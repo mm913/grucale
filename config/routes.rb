@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     sessions: 'users/sessions'
   }
   root to: "users#toppage"
-  resources :users, only: [:show, :edit]do
+  resources :users, only: [:show, :edit, :update]do
     member do
       patch 'toppage'
     end

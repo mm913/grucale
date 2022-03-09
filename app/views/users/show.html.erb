@@ -5,24 +5,39 @@
 <div class="mypage">
   <div class="left-contents">
     <div class="image">
-    <%#= image_tag user.image, class: 'profile-image' if user.image.attached? %>
-    <%= image_tag current_user.image.variant(resize: '300x300'), class: 'profile-image' if current_user.image.attached? %>
+   
+    <%= image_tag @user.image.variant(resize: '300x300'), class: 'profile-image' if @user.image.attached? %>
     </div>
-    <% if user_signed_in? && current_user %>
+    <% if user_signed_in? && current_user.id == @user.id%>
     <%= link_to "マイページ編集",edit_user_path(:id), class: "compilation" %>
     <% end %>
   </div>
   <div class="right-contents">
     <div class="user-name2">
-    <%# current_userはグループ機能実装後に書き換える%>
-      <p><%= current_user.name %>のマイページ</p>
+      <p><%= @user.name %>のマイページ</p>
     </div>
     <div class="user-department">
-    <%# current_userはグループ機能実装後に書き換える%>
-      <p>部署名：<%= current_user.department_name %></p>
+      <p>部署名：<%= @user.department_name %></p>
     </div>
+    <% if user_signed_in? && current_user.id == @user.id %>
     <div class="group_name">
       <p>参加中のグループ</p>
+      <%# if current_user.gropus == nil %>
+        <div class="no-group">
+          <P>まだ参加していません</p>
+        </div>
+      <%# else %>
+        <div class="your-group">
+            <div class="groupーlist">
+              <%# current_user.groups.each do |group| %>
+                <div class="group">
+                  <%#= link_to group.name, "#",  class: "group-name" %>
+                </div>
+              <%# end %>
+            </div>
+        </div>
+      <%# end %>
     </div>
+    <% end %>
   </div>
 </div>

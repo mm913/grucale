@@ -1,4 +1,4 @@
-.hello{
+.choose{
   display: flex;
   justify-content: center;
 }
@@ -6,36 +6,52 @@
 .message1{
   display: flex;
   justify-content: center;
-  color: rgb(47, 105, 191);
 }
 
 .message2{
   display: flex;
   justify-content: center;
-  color: rgb(47, 105, 191);
 }
 
 .center-display{
   list-style:none;
   padding-right: 50px;
+  display: flex;
+  justify-content: center;
 }
 
 .create-group{
   display: flex;
   justify-content: center;
-  margin-top: 30px;
+  margin: 30px 40px 0 0;
+  padding: 4px;
   text-decoration: none;
-  color: #8c8c8c;
+  color: #000000;
+  background-color: #c5e4ff;
   font-size: 20px;
+  border: solid 2px #34a0ff;
+}
+
+.create-group:hover{
+  background-color: #c7c6c6;
+  border: solid 2px #000000;
 }
 
 .join-group{
   display: flex;
   justify-content: center;
   margin-top: 30px;
+  padding: 4px;
   text-decoration: none;
-  color: #8c8c8c;
+  color: #000000;
+  background-color: #c5e4ff;
   font-size: 20px;
+  border: solid 2px #34a0ff;
+}
+
+.join-group:hover{
+  background-color: #c7c6c6;
+  border: solid 2px #000000;
 }
 
 .created-group{

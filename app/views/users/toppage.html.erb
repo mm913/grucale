@@ -3,14 +3,14 @@
 <%# 共通部分ここまで%>
 
 <div class="main">
-  <div class="hello">
-    <h1>HELLO!! </h1>
+  <div class="choose">
+    <h1>CHOOSE!! </h1>
   </div>
   <div class="message1">
     <p>グループを作成、またはグループに参加、</p>
   </div>
   <div class="message2">
-    <p>もしくは参加中のグループを選択してください</p>
+    <p>もしくは参加済みのグループを選択してください</p>
   </div>
   <ul class="center-display">
     <li><%= link_to "グループを作成する", "#" , class: "create-group" %></li>
@@ -20,7 +20,7 @@
    <%# 参加中のグループの有無で表示を変える%>
   <div class="created-group">
     <div class="joined-group">
-      <p>参加中のグループ</p>
+      <p>参加済みのグループ</p>
       <%# if current_user.gropus == nil %>
         <div class="no-group">
           <P>まだ参加していません</p>

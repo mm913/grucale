@@ -1,0 +1,38 @@
+.mypage{
+  display: flex;
+}
+
+.left-contents{
+  width: 40vw;
+  margin-top: 100px;
+}
+
+.image{
+  display: flex;
+  justify-content: center;
+}
+
+.compilation{
+  display: flex;
+  justify-content: center;
+  color: #8c8c8c;
+  text-decoration: none;
+  transition: border-color 0.3s;
+  margin-top: 30px;
+}
+
+.user-name2{
+  margin-top: 50px;
+  font-size: 40px;
+}
+
+.user-department{
+  font-size: 20px;
+  margin: 40px 0px 40px 0px;
+}
+
+.group_name{
+  font-size: 25px;
+}
+
+

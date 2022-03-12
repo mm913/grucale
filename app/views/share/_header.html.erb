@@ -1,0 +1,20 @@
+
+
+<div class ="wrapper">
+  <header class="header">
+    <div class="header-left">
+      <ul class="lists-left" id="lists-left" >
+        <% if user_signed_in? %>
+          <li><%= link_to current_user.name, user_path(current_user), class: "user-name" %></li>
+          <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+        <% end %>       
+      </ul>      
+    </div>
+    <div class="header-right">
+      <div class="lists-right">
+        <%= link_to "グループ",root_path, class: "choice-group" %>
+      </div>
+    </div> 
+  </header>
+</div>  
+   

@@ -4,7 +4,7 @@ FactoryBot.define do
     email                  { Faker::Internet.email }
     password               { Faker::Internet.password(min_length: 6) }
     password_confirmation  { password }
-    department_name        { Faker::String.random(length: 1..50) }
+    department_name        { "あああああああ" }
     
     after(:build) do |user|
       user.image.attach(io: File.open('public/images/test_image.png'), filename: 'test_image.png')

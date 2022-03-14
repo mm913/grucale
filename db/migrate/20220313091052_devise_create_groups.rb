@@ -4,8 +4,9 @@ class DeviseCreateGroups < ActiveRecord::Migration[6.0]
   def change
     create_table :groups do |t|
       ## Database authenticatable
-      t.string :group_name,               null: false, default: ""
+      t.string :group_name,         null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
+      t.text   :note,               null: false
       
 
       ## Recoverable
@@ -37,7 +38,7 @@ class DeviseCreateGroups < ActiveRecord::Migration[6.0]
       t.timestamps null: false
     end
 
-    add_index :groups, :email,                unique: true
+    #add_index :groups, :email,                unique: true
     add_index :groups, :reset_password_token, unique: true
     # add_index :groups, :confirmation_token,   unique: true
     # add_index :groups, :unlock_token,         unique: true

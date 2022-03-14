@@ -6,7 +6,7 @@ class DeviseCreateGroups < ActiveRecord::Migration[6.0]
       ## Database authenticatable
       t.string :group_name,         null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
-      t.text   :note,               null: false
+      t.text   :note
       
 
       ## Recoverable

@@ -45,6 +45,7 @@ ActiveRecord::Schema.define(version: 2022_03_14_133037) do
   create_table "groups", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "group_name", default: "", null: false
     t.string "encrypted_password", default: "", null: false
+    t.text "note"
     t.string "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.datetime "remember_created_at"

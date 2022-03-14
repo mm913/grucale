@@ -13,8 +13,8 @@
     <p>もしくは参加済みのグループを選択してください</p>
   </div>
   <ul class="center-display">
-    <li><%= link_to "グループを作成する", "#" , class: "create-group" %></li>
-    <li><%= link_to "グループに参加する", "#" , class: "join-group" %></li>
+    <li><%= link_to "グループを作成する", new_group_registration_path, class: "create-group" %></li>
+    <li><%= link_to "グループに参加する", new_group_session_path, class: "join-group" %></li>
   </ul>
 
    <%# 参加中のグループの有無で表示を変える%>

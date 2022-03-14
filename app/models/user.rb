@@ -9,4 +9,6 @@ class User < ApplicationRecord
   validates :department_name,  length: { maximum: 50 }
 
   has_one_attached :image
+  has_many :group_users
+  has_many :groups, through: :group_users
 end

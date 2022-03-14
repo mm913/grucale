@@ -10,6 +10,9 @@ class Group < ApplicationRecord
   validates :password, length: { minimum: 6 }, format: { with: VALID_PASSWORD_REGEX }, on: :create
   validates :note,  length: { maximum: 1000 }
 
+  has_many :group_users
+  has_many :users, through: :group_users
+
   def email_required?
     false
   end

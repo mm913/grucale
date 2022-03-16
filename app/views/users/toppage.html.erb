@@ -7,14 +7,14 @@
     <h1>CHOOSE!! </h1>
   </div>
   <div class="message1">
-    <p>グループを作成、またはグループに参加、</p>
+    <p>グループを作成、またはグループを検索、</p>
   </div>
   <div class="message2">
     <p>もしくは参加済みのグループを選択してください</p>
   </div>
   <ul class="center-display">
-    <li><%= link_to "グループを作成する", "#", class: "create-group" %></li>
-    <li><%= link_to "グループに参加する", "#", class: "join-group" %></li>
+    <li><%= link_to "グループを作成する", new_group_path, class: "create-group" %></li>
+    <li><%= link_to "グループを検索する", "#", class: "join-group" %></li>
   </ul>
 
    <%# 参加中のグループの有無で表示を変える%>

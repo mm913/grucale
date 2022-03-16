@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     member do
       patch 'toppage'
     end
+  resources :groups, only: [:new, :create]
   end
 end

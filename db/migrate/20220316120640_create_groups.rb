@@ -3,6 +3,7 @@ class CreateGroups < ActiveRecord::Migration[6.0]
     create_table :groups do |t|
       t.string :group_name, null: false, default:""
       t.text :note
+      t.references :user,         foreign_key: true
       t.timestamps
     end
     add_index :groups, :group_name, unique: true

@@ -1,0 +1,16 @@
+<%# 共通部分%>
+<%= render "share/header" %>
+<%# 共通部分ここまで%>
+
+<%= form_with(url: search_groups_path, local: true, method: :get, class: "search-form") do |form| %>
+  <%= form.text_field :keyword, placeholder: "グループを検索する", class: "search-input" %>
+  <%= form.submit "検索", class: "search-btn" %>
+<% end %>
+
+<div class="contents row">
+  <% @groups.each do |group| %>
+    <ul class="result">
+      <li><%= link_to group.group_name, join_group_path(group.id) %></li>
+    </ul>
+  <% end %>
+</div>

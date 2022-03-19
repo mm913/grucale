@@ -5,5 +5,11 @@ class Group < ApplicationRecord
   
   has_many :group_users
   has_many :users, through: :group_users
+
+  def self.search(search)
+    if search != ""
+      Group.where('group_name LIKE(?)', "%#{search}%")
+    end
+  end
 end
 

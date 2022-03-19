@@ -2,15 +2,24 @@
 <%= render "share/header" %>
 <%# 共通部分ここまで%>
 
-<%= form_with(url: search_groups_path, local: true, method: :get, class: "search-form") do |form| %>
-  <%= form.text_field :keyword, placeholder: "グループを検索する", class: "search-input" %>
-  <%= form.submit "検索", class: "search-btn" %>
-<% end %>
-
-<div class="contents row">
-  <% @groups.each do |group| %>
-    <ul class="result">
-      <li><%= link_to group.group_name, join_group_path(group.id) %></li>
-    </ul>
+<div class="search_main">
+  <%= form_with(url: search_groups_path, local: true, method: :get, class: "search-form") do |form| %>
+    <%= form.text_field :keyword, placeholder: "グループを検索する", class: "search-input" %>
+    <%= form.submit "検索", class: "search-btn" %>
   <% end %>
+
+  <div class="contents row">
+    <% @groups.each do |group| %>
+      <% unless GroupUser.exists?(group_id: group.id, user_id: current_user.id) %>
+        <ul class="result">
+          <li><%= link_to group.group_name, join_group_path(group.id) %></li>
+        </ul>
+      <% else %>
+      <ul class="result">
+      <%# カレンダー機能実装後、遷移先を変更%>
+        <li><%= link_to group.group_name, "#" %></li>
+      </ul>
+      <% end %>
+    <% end %>
+  </div>
 </div>

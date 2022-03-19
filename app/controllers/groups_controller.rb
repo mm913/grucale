@@ -28,7 +28,7 @@ class GroupsController < ApplicationController
     @group.users << current_user
     @group.save
     #カレンダー機能実装後、下記を変更
-    redirect_to  root_path
+    redirect_to root_path
   end
 
   private

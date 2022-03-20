@@ -1,0 +1,38 @@
+.show_top{
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.g_name{
+  font-size: 40px;
+  margin-left: 33vw;
+}
+
+.g_note{
+  text-align: center;
+  font-size: 20px;
+}
+
+.show_bottom{
+  display: flex;
+  justify-content: space-between;
+}
+
+.show_bottom_center{
+  text-align: center;
+  margin: 60px;
+  padding: 10px 60px 10px 60px;
+  border: 1px solid black;
+}
+
+.member_list{
+  list-style:none;
+  text-align:left;
+  display: inline-block; 
+}
+
+.g_member{
+  text-decoration: none;
+  color: black;
+}

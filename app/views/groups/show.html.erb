@@ -2,14 +2,34 @@
 <%= render "share/header" %>
 <%# 共通部分ここまで%>
 
-<div class="main-show">
-  <div class="g_name">
-    <%= @group.group_name %>
+<div class="main_show">
+  <div class="show_top">
+    <div class="g_name">
+      <%= @group.group_name %>
+    </div>
+    <div class="created-date">
+      <%= "作成日： "+ @group.created_at.strftime('%Y/%m/%d') %>
+    </div>
   </div>
-  <div class="g_note_title">
-    <p>備考欄</p>
-    <%= @group.note %>
+  <div class="show_center">
+    <div class="g_note">
+      <%= @group.note %>
+    </div>
   </div>
-  <% @group.users.each do |user| %>
-    <%= link_to user.name, user_path(user.id) %>
-  <% end %>
+  <div class="show_bottom">
+    <div class="show_bottom_left">
+    </div>
+    <div class="show_bottom_center">
+      <p class="member">参加中メンバー</p>
+      <div class="member_list">
+        <ul class="members">
+          <% @group.users.each do |user| %>
+            <li><%= link_to user.name, user_path(user.id), class:"g_member" %></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="show_bottom_right">
+    </div>
+  </div>
+</div>

@@ -19,25 +19,9 @@
     <div class="user-department">
       <p>部署名：<%= @user.department_name %></p>
     </div>
-    <% if user_signed_in? && current_user.id == @user.id %>
-    <div class="group_name">
-      <p>参加済みのグループ</p>
-      <%# if current_user.groups == nil %>
-        <div class="no-group">
-          <P>まだ参加していません</p>
-        </div>
-      <%# else %>
-        <div class="your-group">
-            <div class="groupーlist">
-              <%# current_user.groups.each do |group| %>
-                <div class="group">
-                  <%#= link_to group.name, "#",  class: "group-name" %>
-                </div>
-              <%# end %>
-            </div>
-        </div>
-      <%# end %>
-    </div>
-    <% end %>
+    <%# 共通部分%>
+    <%= render "share/group-list" %>
+    <%# 共通部分ここまで%>
+    
   </div>
 </div>

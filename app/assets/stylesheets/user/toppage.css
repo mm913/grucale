@@ -15,6 +15,7 @@
 
 .center-display{
   list-style:none;
+  margin-bottom: 40px;
   padding-right: 50px;
   display: flex;
   justify-content: center;

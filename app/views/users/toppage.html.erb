@@ -17,25 +17,7 @@
     <li><%= link_to "グループを検索する", groups_path, class: "join-group" %></li>
   </ul>
 
-   <%# 参加中のグループの有無で表示を変える%>
-  <div class="created-group">
-    <div class="joined-group">
-      <p>参加済みのグループ</p>
-      <%# if current_user.gropus == nil %>
-        <div class="no-group">
-          <P>まだ参加していません</p>
-        </div>
-      <%# else %>
-        <div class="your-group">
-            <div class="groupーlist">
-              <%# current_user.groups.each do |group| %>
-                <div class="group">
-                  <%#= link_to group.name, "#",  class: "group-name" %>
-                </div>
-              <%# end %>
-            </div>
-        </div>
-      <%# end %>
-    </div>
-  </div>
-  </div>
+   <%# 共通部分%>
+    <%= render "share/group-list" %>
+    <%# 共通部分ここまで%>
+</div>

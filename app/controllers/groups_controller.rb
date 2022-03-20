@@ -18,9 +18,7 @@ class GroupsController < ApplicationController
   end
 
   def search
-    #@group = Group.find(params[:id])
     @groups = Group.search(params[:keyword])
-    
   end
 
   def join
@@ -29,6 +27,10 @@ class GroupsController < ApplicationController
     @group.save
     #カレンダー機能実装後、下記を変更
     redirect_to root_path
+  end
+
+  def show
+    @group = Group.find(params[:id])
   end
 
   private

@@ -1,0 +1,15 @@
+<%# 共通部分%>
+<%= render "share/header" %>
+<%# 共通部分ここまで%>
+
+<div class="main-show">
+  <div class="g_name">
+    <%= @group.group_name %>
+  </div>
+  <div class="g_note_title">
+    <p>備考欄</p>
+    <%= @group.note %>
+  </div>
+  <% @group.users.each do |user| %>
+    <%= link_to user.name, user_path(user.id) %>
+  <% end %>

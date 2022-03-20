@@ -9,7 +9,7 @@ Rails.application.routes.draw do
       patch 'toppage'
     end
   end
-  resources :groups, only: [:index, :new, :create]do
+  resources :groups, only: [:index, :new, :create, :show]do
     member do
       get 'join'
     end

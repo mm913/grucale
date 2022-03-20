@@ -19,9 +19,10 @@
     <div class="user-department">
       <p>部署名：<%= @user.department_name %></p>
     </div>
-    <%# 共通部分%>
-    <%= render "share/group-list" %>
-    <%# 共通部分ここまで%>
-    
+    <% if user_signed_in? && current_user == @user %>
+      <%# 共通部分%>
+      <%= render "share/group-list" %>
+      <%# 共通部分ここまで%>
+    <% end %>
   </div>
 </div>

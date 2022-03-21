@@ -17,7 +17,7 @@
       <p><%= @user.name %>のマイページ</p>
     </div>
     <div class="user-department">
-      <p>部署名：<%= @user.department_name %></p>
+      <p>プロフィール：<%= @user.department_name %></p>
     </div>
     <% if user_signed_in? && current_user == @user %>
       <%# 共通部分%>

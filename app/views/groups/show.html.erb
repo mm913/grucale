@@ -12,15 +12,20 @@
     </div>
   </div>
   <div class="show_center">
-    <div class="g_note">
-      <%= @group.note %>
+    <div class="show_center_top">
+      <div class="g_note">
+        <%= @group.note %>
+      </div>
+    <div class="show_center_bottom">
+      <%= link_to "カレンダー表示", "#", class:"to_calendar" %>
+      <%= link_to "退会する", group_path(@group), method: :delete, class:"withdrawale" %>
     </div>
   </div>
   <div class="show_bottom">
     <div class="show_bottom_left">
     </div>
     <div class="show_bottom_center">
-      <p class="member">参加中メンバー</p>
+      <p class="member">【参加中のメンバー】</p>
       <div class="member_list">
         <ul class="members">
           <% @group.users.each do |user| %>

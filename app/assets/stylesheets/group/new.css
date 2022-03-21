@@ -60,7 +60,6 @@ form {
   background: #fcf94a;
   border: none;
   color: #fff;
-  cursor: pointer;
   height: 50px;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2em;
@@ -73,7 +72,6 @@ form {
 
 .back-button {
   border: none;
-  cursor: pointer;
   height: 50px;
   font-family: 'Open Sans', sans-serif;
   font-size: 1em;

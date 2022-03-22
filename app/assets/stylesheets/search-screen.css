@@ -1,0 +1,21 @@
+.search_main{
+  text-align:center;
+}
+
+.search_form{
+  margin: 30px;
+  font-size: 22px;
+}
+
+.search-input{
+  padding: 10px 60px;
+  font-size: 15px;
+  border: 1px solid black;
+}
+
+.search-btn{
+  padding: 8px 15px;
+  font-size: 15px;
+  background-color: aliceblue;
+  border: 1px solid black;
+}

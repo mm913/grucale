@@ -1,0 +1,31 @@
+<%# 共通部分%>
+<%= render "share/header" %>
+<%# 共通部分ここまで%>
+
+<%= form_with model: @group, url: groups_path, class: 'registration-main', local: true do |f| %>
+ <div class="form-wrapper-group">
+  <h3>グループ作成</h3>
+
+  <%# エラーメッセージの部分テンプレート%>
+  <%= render 'share/error_messages', model: f.object %>
+
+  <div class="form-group">
+    <div class='form-item'>
+      <label class="form-text"></label>
+    </div>
+    <%= f.text_field :group_name, class:"input-default", id:"group_name", placeholder:"グループ名 ※6文字以上" %>
+    <p class="caution">注）既に登録済みのグループ名は使用できません</P>
+  </div>
+  <div class="form-group">
+    <div class='form-item'>
+      <label class="form-text"></label>
+    </div>
+    <%= f.text_area :note, class:"input-default", id:"note", placeholder:"備考（任意）※1,000文字以内" %>
+  </div>
+  <div class='button-panel'>
+    <%= f.submit "グループ登録" ,class:"button" %>
+  </div>
+<% end %>
+<div class="back-button">
+  <%= link_to "戻る", root_path, class:"back_btn" %>
+</div>

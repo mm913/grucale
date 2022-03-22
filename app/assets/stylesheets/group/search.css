@@ -1,0 +1,19 @@
+.result_display{
+  text-align: center;
+}
+
+.search_list{
+  text-align:left;
+  display: inline-block; 
+}
+
+.result{
+  list-style:none;
+}
+
+
+.group_list{
+  color: #000000;
+  font-size: 20px;
+  text-decoration: none;
+}

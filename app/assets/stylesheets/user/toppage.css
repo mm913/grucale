@@ -15,6 +15,7 @@
 
 .center-display{
   list-style:none;
+  margin-bottom: 40px;
   padding-right: 50px;
   display: flex;
   justify-content: center;
@@ -27,9 +28,9 @@
   padding: 4px;
   text-decoration: none;
   color: #000000;
-  background-color: #c5e4ff;
+  background-color: #96ed9d;
   font-size: 20px;
-  border: solid 2px #34a0ff;
+  border: solid 2px #0db31b;
 }
 
 .create-group:hover{
@@ -44,9 +45,9 @@
   padding: 4px;
   text-decoration: none;
   color: #000000;
-  background-color: #c5e4ff;
+  background-color: #96ed9d;
   font-size: 20px;
-  border: solid 2px #34a0ff;
+  border: solid 2px #0db31b;
 }
 
 .join-group:hover{

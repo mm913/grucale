@@ -3,4 +3,7 @@ ja:
     attributes:
       user:
         name: 名前
-        department_name: 部署名
+        department_name: プロフィール
+      group:
+        group_name: グループ名
+        note: 備考

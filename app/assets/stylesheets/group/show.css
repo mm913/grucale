@@ -1,0 +1,73 @@
+.show_top{
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.g_name{
+  font-size: 40px;
+  margin-left: 33vw;
+}
+
+.show_center{
+  text-align: center;
+}
+
+.g_note{
+  font-size: 20px;
+}
+
+.show_center_bottom{
+  margin-top: 20px;
+}
+
+.to_calendar{
+  color: rgb(52, 104, 245);
+  margin: 15px;
+  padding: 7px;
+  border: 2px solid rgb(52, 104, 245);
+  text-decoration: none;
+}
+
+.to_calendar:hover{
+  color: rgb(52, 104, 245);
+}
+
+.withdrawale{
+  color: rgb(255, 62, 62);
+  padding: 7px;
+  margin: 20px;
+  border: 2px solid rgb(255, 62, 62);
+  text-decoration: none;
+}
+
+.withdrawale:hover{
+  color: rgb(255, 62, 62);
+}
+
+.show_bottom{
+  display: flex;
+  justify-content: space-between;
+}
+
+.show_bottom_center{
+  text-align: center;
+  margin: 60px;
+  padding: 10px 60px 10px 60px;
+  border: 1px solid black;
+}
+
+.member_list{
+  list-style:none;
+  font-size: 20px;
+}
+
+.g_member{
+  text-decoration: none;
+  color: black;
+  margin: 10px;
+}
+
+li{
+  display: inline;
+}

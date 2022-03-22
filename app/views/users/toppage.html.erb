@@ -7,35 +7,17 @@
     <h1>CHOOSE!! </h1>
   </div>
   <div class="message1">
-    <p>グループを作成、またはグループに参加、</p>
+    <p>グループを作成、またはグループを検索、</p>
   </div>
   <div class="message2">
     <p>もしくは参加済みのグループを選択してください</p>
   </div>
   <ul class="center-display">
-    <li><%= link_to "グループを作成する", "#" , class: "create-group" %></li>
-    <li><%= link_to "グループに参加する", "#" , class: "join-group" %></li>
+    <li><%= link_to "グループを作成する", new_group_path, class: "create-group" %></li>
+    <li><%= link_to "グループを検索する", groups_path, class: "join-group" %></li>
   </ul>
-
-   <%# 参加中のグループの有無で表示を変える%>
-  <div class="created-group">
-    <div class="joined-group">
-      <p>参加済みのグループ</p>
-      <%# if current_user.gropus == nil %>
-        <div class="no-group">
-          <P>まだ参加していません</p>
-        </div>
-      <%# else %>
-        <div class="your-group">
-            <div class="groupーlist">
-              <%# current_user.groups.each do |group| %>
-                <div class="group">
-                  <%#= link_to group.name, "#",  class: "group-name" %>
-                </div>
-              <%# end %>
-            </div>
-        </div>
-      <%# end %>
-    </div>
-  </div>
-  </div>
+  <%# 共通部分%>
+  <%= render "share/group-list" %>
+  <%# 共通部分ここまで%>
+</div>
+   

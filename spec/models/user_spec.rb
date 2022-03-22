@@ -72,7 +72,7 @@ RSpec.describe User, type: :model do
       it "department_nameが51文字以上だと登録できない" do
         @user.department_name = "あああ"*50
         @user.valid?
-        expect(@user.errors.full_messages).to include("部署名は50文字以内で入力してください")
+        expect(@user.errors.full_messages).to include("プロフィールは50文字以内で入力してください")
       end
     end
   end

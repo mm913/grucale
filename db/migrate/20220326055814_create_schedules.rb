@@ -4,8 +4,9 @@ class CreateSchedules < ActiveRecord::Migration[6.0]
       t.string :title, null: false
       t.datetime :start_time
       t.datetime :finish_time
-      t.boolean :allday
+      t.boolean :all_day
       t.text :note
+      t.references :group, foreign_key: true
 
       t.timestamps
     end

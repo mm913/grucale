@@ -1,0 +1,9 @@
+<%# 共通部分%>
+<%= render "share/header" %>
+<%# 共通部分ここまで%>
+
+<div class="simple_calendar">
+  <%= month_calendar  do |date| %>
+    <%= date.day %>
+  <% end %>
+</div>

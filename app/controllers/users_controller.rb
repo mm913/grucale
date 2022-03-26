@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
 
-  def toppage
-    
+  def toppage   
   end
   
   def show

@@ -56,10 +56,12 @@ ActiveRecord::Schema.define(version: 2022_03_26_055814) do
     t.string "title", null: false
     t.datetime "start_time"
     t.datetime "finish_time"
-    t.boolean "allday"
+    t.boolean "all_day"
     t.text "note"
+    t.bigint "group_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["group_id"], name: "index_schedules_on_group_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -80,4 +82,5 @@ ActiveRecord::Schema.define(version: 2022_03_26_055814) do
   add_foreign_key "group_users", "groups"
   add_foreign_key "group_users", "users"
   add_foreign_key "groups", "users"
+  add_foreign_key "schedules", "groups"
 end

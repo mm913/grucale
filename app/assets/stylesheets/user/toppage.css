@@ -28,13 +28,13 @@
   padding: 4px;
   text-decoration: none;
   color: #000000;
-  background-color: #96ed9d;
+  background-color: #CEAB93;
   font-size: 20px;
-  border: solid 2px #0db31b;
+  border: solid 2px #8e8773;
 }
 
 .create-group:hover{
-  background-color: #c7c6c6;
+  background-color: #A1CAE2;
   border: solid 2px #000000;
 }
 
@@ -45,13 +45,13 @@
   padding: 4px;
   text-decoration: none;
   color: #000000;
-  background-color: #96ed9d;
+  background-color: #CEAB93;
   font-size: 20px;
-  border: solid 2px #0db31b;
+  border: solid 2px #8e8773;
 }
 
 .join-group:hover{
-  background-color: #c7c6c6;
+  background-color: #A1CAE2;
   border: solid 2px #000000;
 }
 

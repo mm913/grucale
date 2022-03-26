@@ -1,6 +1,6 @@
 .header{
   display: flex;
-  background-color: rgb(255, 255, 123);
+  background-color: #C2B092;
   justify-content: space-between;
   align-items: center;
   height: 10vh;
@@ -20,7 +20,7 @@
 }
 
 .user-name:hover{
-  color:#fad6d7;
+  color:#FFFBE9;
 }
 
 .logout{
@@ -31,7 +31,7 @@
 }
 
 .logout:hover{
-  color:#fad6d7;
+  color:#FFFBE9;
 }
 
 .lists-right{
@@ -50,5 +50,5 @@
 }
 
 .choice-group:hover{
-  color:#fad6d7;
+  color:#FFFBE9;
 }

@@ -23,11 +23,12 @@
 }
 
 .to_calendar{
-  color: #fcf8f8;
-  background-color: rgb(52, 104, 245);
+  
+  color: #000000;
+  background-color: #CEAB93;
+  border: solid 2px #8e8773;
   margin: 15px;
   padding: 7px;
-  border: 2px solid rgb(33, 67, 160);
   text-decoration: none;
 }
 
@@ -38,18 +39,19 @@
 }
 
 .withdrawale{
-  color: #fcf8f8;
-  background-color: rgb(255, 62, 62);
+  font-size: 15px;
+  color: #000000;
+  background-color: #CEAB93;
+  border: solid 2px #8e8773;
   padding: 7px;
   margin: 20px;
-  border: 2px solid rgb(159, 38, 38);
   text-decoration: none;
 }
 
 .withdrawale:hover{
-  color: #000000;
-  background-color: #c7c6c6;
-  border: solid 2px #000000;
+  color: #f26161;
+  background-color: #e9e3e3;
+  border: solid 2px #f54e4e;
 }
 
 .show_bottom{

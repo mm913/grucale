@@ -34,8 +34,8 @@
 }
 
 .create-group:hover{
-  background-color: #A1CAE2;
-  border: solid 2px #000000;
+  background-color: #b17349;
+  border: solid 2px #8e8773;
 }
 
 .join-group{
@@ -51,8 +51,8 @@
 }
 
 .join-group:hover{
-  background-color: #A1CAE2;
-  border: solid 2px #000000;
+  background-color: #b17349;
+  border: solid 2px #8e8773;
 }
 
 .created-group{

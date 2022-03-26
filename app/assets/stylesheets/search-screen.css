@@ -14,8 +14,8 @@
 }
 
 .search-btn{
-  padding: 8px 15px;
+  padding: 6px 15px;
   font-size: 15px;
-  background-color: aliceblue;
-  border: 1px solid black;
+  background-color: #CEAB93;
+  border: solid 2px #8e8773;
 }

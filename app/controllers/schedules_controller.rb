@@ -5,22 +5,18 @@ class SchedulesController < ApplicationController
   end
 
   def new
+    #@group = Group.find(params[:group_id])
     @schedule = Schedule.new
   end
 
   def create
-    @schedule = Schedule.new(schedule_parameter)
-    if @schedule.save
-      @schedule = Schedule(group_id: params[:group_id])
-      redirect_to group_schedules_path(:group_id)
-    else
-      render 'new'
-    end
+    Schedule.create(schedule_parameter)
+    redirect_to group_schedules_path
   end
 
   private
 
   def schedule_parameter
-    params.require(:schedule).permit(:title, :start_time, :finish_time, :note)
+    params.require(:schedule).permit(:title, :start_time, :finish_time, :note).merge(user_id: @user.id, group_id: @group.id)
   end
 end

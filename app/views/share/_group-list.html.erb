@@ -4,7 +4,7 @@
     <% current_user.groups.each do |group| %>   
       <div class="group">
         <%# カレンダー機能実装後に下記を編集 %>
-        <%= link_to group.group_name, schedules_path, class: "group-name" %>
+        <%= link_to group.group_name, group_schedules_path(:group_id), class: "group-name" %>
       </div>
     <% end %>  
   </div>

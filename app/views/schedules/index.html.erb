@@ -1,9 +1,12 @@
 <%# 共通部分%>
 <%= render "share/header" %>
 <%# 共通部分ここまで%>
-
+<div>
+  <%= link_to 'スケジュール作成', new_group_schedule_path(:id) %>
+<%#= @schedules.group_name[:group_id] %>
+</div>
 <div class="simple_calendar">
-  <%= month_calendar  do |date| %>
+  <%= month_calendar schedules: @schedules do |date, schedule| %>
     <%= date.day %>
   <% end %>
 </div>

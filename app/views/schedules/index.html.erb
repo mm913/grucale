@@ -2,6 +2,7 @@
 <%= render "share/header" %>
 <%# 共通部分ここまで%>
 <div>
+  <%= @group.group_name %>
   <%= link_to 'スケジュール作成', new_group_schedule_path(:id) %>
 <%#= @schedules.group_name[:group_id] %>
 </div>

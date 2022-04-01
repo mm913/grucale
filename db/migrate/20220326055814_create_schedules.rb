@@ -6,8 +6,8 @@ class CreateSchedules < ActiveRecord::Migration[6.0]
       t.datetime :finish_time
       t.boolean :all_day
       t.text :note
-      t.references :group, foreign_key: true
-      t.references :user, foreign_key: true
+      t.references :group, null: false, foreign_key: true
+      t.integer :user_id
 
       t.timestamps
     end

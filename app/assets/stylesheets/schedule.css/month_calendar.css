@@ -7,3 +7,17 @@
   background: #eaf7ff;
   color: #307de9;
 }
+
+.calendar-title{
+  font-size: 20px;
+  margin: 25px;
+}
+
+.simple_calendar{
+  text-decoration: none;
+}
+
+.calendar-heading{
+  padding: 13px;
+  text-align: center;
+}

@@ -4,11 +4,7 @@
 
 <div class="top_display">
   <div class="head_display">
-    <div class="groupname">
-      <%= link_to @group.group_name, group_path(@group.id)%>
-      <%#= @user.name %>
-      <%#= link_to 'スケジュール作成', new_group_schedule_path %>
-    </div>
+    <%= link_to @group.group_name, group_path(@group.id), class:"groupname" %>
   </div>
 </div>
 
@@ -66,7 +62,7 @@
 <div class="bottom_display_b">
   <div class="right_display">
     <div class="event_index">
-      <span>今後の予定</span>
+      <span>《今後の予定》</span>
         <% @schedules.each do |schedule| %>
           <div class="future_event">
           <% if schedule.start_time > Time.now %>

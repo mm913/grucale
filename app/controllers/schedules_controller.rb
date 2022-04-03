@@ -5,7 +5,7 @@ class SchedulesController < ApplicationController
     #@user = User.find(params[:user_id])
     #@groups = Group.all
     #@schedules = Group.find(params[:group_id]).schedule
-    @schedules = Schedule.where(group_id: params[:group_id])
+    @schedules = Schedule.where(group_id: params[:group_id]).order("start_time ASC")
     #@schedules = Schedule.all
     @schedule = Schedule.new
     #@schedules = @group.schedules

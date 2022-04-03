@@ -1,52 +1,68 @@
 <%# 共通部分%>
 <%= render "share/header" %>
 <%# 共通部分ここまで%>
-<div>
-  <%= @group.group_name %>
-  <%#= @user.name %>
-  <%#= link_to 'スケジュール作成', new_group_schedule_path %>
-</div>
-<div class="simple_calendar">
-  <%= month_calendar events: @schedules do |date, schedules| %>
-    <%= date.day %> 
-   <%# スケジュールの表示 %>
-    <% schedules.each do |schedule| %>
-      <div>
-        <%= schedule.title %>
-      </div>
-    <% end %>
-  <% end %>
+
+<div class="top_display">
+  <div class="head_display">
+    <div class="groupname">
+      <%= link_to @group.group_name, group_path(@group.id)%>
+      <%#= @user.name %>
+      <%#= link_to 'スケジュール作成', new_group_schedule_path %>
+    </div>
+  </div>
 </div>
 
-<%# 新規作成フォーム %>
-<div class="new_schedule">
-<span>スケジュール作成</span>
+<div class="bottom_display_a">
+  <div class="left_display">
+    <div class="simple_calendar">
+      <%= month_calendar events: @schedules do |date, schedules| %>
+        <%= date.day %> 
+      <%# スケジュールの表示 %>
+        <% schedules.each do |schedule| %>
+          <div>
+            <%= schedule.title %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+    <%# 新規作成フォーム %>
+    <div class="new_schedule">
+      <span>スケジュール作成</span>
+      
+      <%= form_with(model: [@group, @schedule], local: true) do |f| %>
+        <div class="title">
+          <%= f.text_field :title, class:"input-default", id:"title", placeholder:"タイトル" %>
+        </div>
+
+        <div class="time">
+          <%= f.label :start_time, "開始日時" %>
+          <%= f.datetime_select :start_time, class:"input-default", id:"start_time", placeholder:"開始日時"  %>
+        </div>
+
+        <div class="time">
+          <%= f.label :finish_time, "終了日時" %>
+          <%= f.datetime_select :finish_time,  class:"input-default", id:"finish_time", placeholder:"終了日時"  %>
+        </div>
+
+        <div class="all_day">
+          <%= f.label :all_day, "終日" %>
+          <%= f.check_box 'all_day', {:checked => false}, checked_value = 'true',unchecked_value = 'false' %>
+
+        <div class="note">
+          <%= f.text_area :note, class:"input-default", id:"note", placeholder:"備考"  %>
+        </div>
+
+        <div class="submit">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
 </div>
-<%= form_with(model: [@group, @schedule], local: true) do |f| %>
-  <div class="title">
-    <%= f.text_field :title, class:"input-default", id:"title", placeholder:"タイトル" %>
+<div class="bottom_display_b">
+  <div class="right_display">
+    <div class="today_event">
+      <span>今日の予定</span>
+    </div>
   </div>
-
-  <div class="time">
-    <%= f.label :start_time, "開始日時" %>
-    <%= f.datetime_select :start_time, class:"input-default", id:"start_time", placeholder:"開始日時"  %>
-  </div>
-
-  <div class="time">
-    <%= f.label :finish_time, "終了日時" %>
-    <%= f.datetime_select :finish_time,  class:"input-default", id:"finish_time", placeholder:"終了日時"  %>
-  </div>
-
-  <div class="all_day">
-    <%= f.label :all_day, "終日" %>
-    <%= f.check_box 'all_day', {:checked => false}, checked_value = 'true',unchecked_value = 'false' %>
-
-  <div class="note">
-    <%= f.text_field :note, class:"input-default", id:"note", placeholder:"備考"  %>
-  </div>
-
-  <div class="submit">
-    <%= f.submit %>
-  </div>
-
-<% end %>
+</div>

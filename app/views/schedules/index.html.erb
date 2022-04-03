@@ -7,16 +7,14 @@
   <%#= link_to 'スケジュール作成', new_group_schedule_path %>
 </div>
 <div class="simple_calendar">
-  <%= month_calendar schedules: @schedules do |date, schedule| %>
-    <%= date.day %>
-  
+  <%= month_calendar events: @schedules do |date, schedules| %>
+    <%= date.day %> 
    <%# スケジュールの表示 %>
-    <% @schedules.each do |schedule| %>
-    <div>
-      <%= schedule.title %>
-    </div>
-  <% end %>
-
+    <% schedules.each do |schedule| %>
+      <div>
+        <%= schedule.title %>
+      </div>
+    <% end %>
   <% end %>
 </div>
 

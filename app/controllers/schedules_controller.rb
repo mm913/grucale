@@ -6,6 +6,7 @@ class SchedulesController < ApplicationController
     #@groups = Group.all
     #@schedules = Group.find(params[:group_id]).schedule
     @schedules = Schedule.where(group_id: params[:group_id])
+    #@schedules = Schedule.all
     @schedule = Schedule.new
     #@schedules = @group.schedules
     

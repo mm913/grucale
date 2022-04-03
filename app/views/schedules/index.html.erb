@@ -25,11 +25,15 @@
         <% end %>
       <% end %>
     </div>
+
     <%# 新規作成フォーム %>
     <div class="new_schedule">
       <span>スケジュール作成</span>
       
       <%= form_with(model: [@group, @schedule], local: true) do |f| %>
+      <%# エラーメッセージの部分テンプレート%>
+      <%= render 'share/error_messages', model: f.object %>
+
         <div class="title">
           <%= f.text_field :title, class:"input-default", id:"title", placeholder:"タイトル" %>
         </div>
@@ -61,8 +65,16 @@
 </div>
 <div class="bottom_display_b">
   <div class="right_display">
-    <div class="today_event">
-      <span>今日の予定</span>
+    <div class="event_index">
+      <span>今後の予定</span>
+        <% @schedules.each do |schedule| %>
+          <div class="future_event">
+          <% if schedule.start_time > Time.now %>
+            <%= schedule.start_time.strftime("%m月%d日") %>
+            <%= schedule.title %>
+          <% end %>
+          </div>
+        <% end %>  
     </div>
   </div>
 </div>

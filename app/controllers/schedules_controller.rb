@@ -23,15 +23,12 @@ class SchedulesController < ApplicationController
     @schedules = @group.schedule
     @schedule = current_user.schedules.new(schedule_parameter)
     @schedule_new = Schedule.new
-    @schedule.group_id = @group.id
+    @schedule.group_id = @group.id   
+    #スケジュールの保存
+    @schedule.save    
+    @schedule = Schedule.new
+    redirect_to group_schedules_path(@group.id)
     
-    #@schedule = Schedule.create(schedule_parameter)
-    if @schedule.save    
-      @schedule = Schedule.new
-      redirect_to group_schedules_path(@group.id)
-    else
-      redirect_to root_path
-    end
   end
 
   private

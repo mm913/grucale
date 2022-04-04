@@ -1,6 +1,6 @@
 .head_display{
   padding: 20px;
-  
+  background-color: white;
 }
 
 .groupname{
@@ -10,11 +10,7 @@
 
 .bottom_display_a{
   display: flex;
-}
-
-.bottom_display_b{
-  background-color: #e5d6c1;
-  margin-bottom: 20px;
+  background-color: white;
 }
 
 .left_display{
@@ -23,7 +19,9 @@
 }
 
 .new_schedule{
-  margin-top: 30px; 
+  margin-top: 10px; 
+  padding: 15px;
+  background-color: #f7efcd;
 }
 
 .title{
@@ -34,22 +32,34 @@
   width: 500px;
 }
 
+.bottom_display_b{
+  background-color: #FFFBE9;
+  margin: 0 20px 20px 0;
+}
+
 .right_display{
   width: 25vw;
 }
 
 .event_index{
-  text-align: center;
   padding-top: 20px;
   font-size: 17px;
 }
 
 .future_event{
-  text-align: left;
-  padding: 0 10px 10px 100px;
+  padding: 0 10px;
+  margin-top: 3px;
   font-size: 17px;
+  display: flex;
+}
+
+.future_event_title{
+  color:#7691f3;
+  margin-left: 10px;
 }
 
 .simple_calendar{
   background-color: white;
+  text-decoration: none;
+  color: #4f4f4f;
 }

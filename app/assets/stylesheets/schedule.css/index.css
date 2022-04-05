@@ -18,6 +18,16 @@
   width: 75vw;
 }
 
+.event_title{
+  color: #4f4f4f;
+  text-decoration: none;
+}
+
+
+.event_title:hover{
+  color: #e76c6c;
+}
+
 .new_schedule{
   margin-top: 10px; 
   padding: 15px;
@@ -56,6 +66,13 @@
 .future_event_title{
   color:#7691f3;
   margin-left: 10px;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+
+.future_event_title:hover{
+  color: #e76c6c;
 }
 
 .simple_calendar{

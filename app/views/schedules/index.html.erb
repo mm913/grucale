@@ -16,7 +16,7 @@
       <%# スケジュールの表示 %>
         <% schedules.each do |schedule| %>
           <div>
-            <%= schedule.title %>
+            <%= link_to schedule.title, group_schedule_path(@group.id, schedule.id), class:"event_title" %>
           </div>
         <% end %>
       <% end %>
@@ -63,7 +63,7 @@
 <div class="bottom_display_b">
   <div class="right_display">
     <div class="event_index">
-      <span>《今後の予定》</span>
+      <span>《今後のスケジュール》</span>
         <% @schedules.each do |schedule| %>
           <div class="future_event">
           <% if schedule.start_time > Time.now %>
@@ -74,7 +74,7 @@
               <%= "終日" %>
             <% end %>
             <div class="future_event_title">
-            <%= schedule.title %>
+            <%= link_to schedule.title, group_schedule_path(@group.id, schedule.id), class:"future_event_title" %>
             </div>
           <% end %>
           </div>

@@ -1,5 +1,5 @@
 class SchedulesController < ApplicationController
-  before_action :set_schedule, only: [:index, :create]
+  before_action :set_schedule, only: [:index, :create, :show]
 
   def index
     #@user = User.find(params[:user_id])
@@ -11,10 +11,6 @@ class SchedulesController < ApplicationController
     #@schedules = @group.schedules
     
   end
-
-  #def new
-   # @schedule = Schedule.new
-  #end
 
   def create
     #binding.pry
@@ -28,7 +24,10 @@ class SchedulesController < ApplicationController
     @schedule.save    
     @schedule = Schedule.new
     redirect_to group_schedules_path(@group.id)
-    
+  end
+
+  def show
+    @schedule = Schedule.find(params[:id])
   end
 
   private

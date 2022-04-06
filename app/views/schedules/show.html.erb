@@ -13,12 +13,12 @@
         </div>
         <div class="left_top_display_b">
           <div class="image_column">
-            <%= image_tag @schedule.user.image.variant(resize: '60x60') if @schedule.user.image.attached? %>
+            <%= image_tag @schedule.user.image.variant(resize: '80x80') if @schedule.user.image.attached? %>
           </div>
         </div>
         <div class="left_top_display_c">
           <div class="author_column">
-            <%= "作成者： "%>
+            <%= "作成者： " %>
           </div>
           <div class="user_column">
             <%= @schedule.user.name %>
@@ -30,12 +30,14 @@
       </div>
       <div class="left_top_bottom_display">
         <div class="left_top_display_d">
-          <div class="start_time_column">
-            <div class="start_time_column_md">
-              <%= @schedule.start_time.strftime("%m月%d日") %>
-            </div>
+          <div class="time_column">
+            <%= "START" %>
+          </div>
+          <div class="time_column_md">
+            <%= @schedule.start_time.strftime("%m月%d日(#{%w(日 月 火 水 木 金 土)[@schedule.start_time.wday]})") %>
+          </div>
           <% if @schedule.all_day == false %>
-            <div class="start_time_column_hm">
+            <div class="time_column_hm">
               <%= @schedule.start_time.strftime("%H:%M") %>
             </div>
           <% else %>
@@ -43,19 +45,21 @@
               <%= "終日" %>
             </div>
           <% end %>
-          </div>
         </div>
         <div class="left_top_display_e">
-          <div class="finish_time_column">
           <% if @schedule.all_day == false %>
-            <div class="finish_time_column_md">
-              <%= @schedule.finish_time.strftime("%m月%d日") %>
-            </div>
-            <div class="finish_time_column_hm">
-              <%= @schedule.finish_time.strftime("%H:%M") %>
+            <div class="left_top_display_e2">
+              <div class="time_column">
+                <%= "FINISH" %>  
+              </div>   
+              <div class="time_column_md">
+                <%= @schedule.finish_time.strftime("%m月%d日(#{%w(日 月 火 水 木 金 土)[@schedule.start_time.wday]})") %>
+              </div>
+              <div class="time_column_hm">
+                <%= @schedule.finish_time.strftime("%H:%M") %>
+              </div>
             </div>
           <% end %>
-          </div>
         </div>
       </div>
     </div>

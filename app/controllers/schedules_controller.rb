@@ -8,8 +8,7 @@ class SchedulesController < ApplicationController
     @schedules = Schedule.where(group_id: params[:group_id]).order("start_time ASC")
     #@schedules = Schedule.all
     @schedule = Schedule.new
-    #@schedules = @group.schedules
-    
+    #@schedules = @group.schedules  
   end
 
   def create

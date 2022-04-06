@@ -1,18 +1,30 @@
 .show_page{
   display: flex;
   background-color: white;
+  height: 100vh;
 }
 
 .left_top_top_display{
   display: flex;
+  height: 15vh;
 }
 
 .left_top_display_a{
-  background-color: rgb(231, 168, 162);
+  width: 45vw;
+  display: flex;
+  align-items: center;
+}
+
+.title_column{
+  padding: 20px;
+  font-size: 50px;
 }
 
 .left_top_display_b{
-  background-color: rgb(96, 146, 190);
+  width: 7vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .left_top_display_btn{
@@ -20,29 +32,90 @@
 }
 
 .left_top_display_c{
-  background-color: rgb(92, 187, 98);
+  width: 15vw;
+  display: block;
+  padding-top: 15px;
 }
 
-.left_top_display_d{
-  background-color: rgb(225, 214, 94);
+.author_column{
+  margin-bottom: 10px;
+  font-size: 18px;
 }
 
-.left_top_display_e{
-  background-color: rgb(210, 128, 40);
-}
-
-.left_bottom_display_a{
-  background-color: rgb(206, 166, 243);
-}
-
-.left_bottom_display_b{
-  background-color: rgb(232, 174, 215);
+.user_column{
+  font-size: 22px;
 }
 
 .left_top_bottom_display{
   display: flex;
+  height: 25vh;
+  align-items: center;
+}
+
+.left_top_display_d{
+  width: 28vw;
+  border: 1px solid rgb(176, 175, 175);
+}
+
+.time_column{
+  font-size: 25px;
+  color: rgb(176, 175, 175);
+  margin: 10px;
+  text-decoration:underline;
+  text-decoration-color: rgb(246, 183, 183);
+}
+
+.time_column_md{
+  font-size: 30px;
+  margin: 20px;
+}
+
+.time_column_hm{
+  font-size: 30px;
+  margin: 20px;
+}
+
+.all_day_column{
+  font-size: 30px;
+  margin: 20px;
+}
+
+.left_top_display_e2{
+  width: 28vw;
+  border: 1px solid rgb(176, 175, 175);
+}
+
+
+.left_bottom_display_a{
+  width: 56vw;
+  height: 40vh;
+  border: 1px solid rgb(176, 175, 175);
+}
+
+.note_column_head{
+  font-size: 15px;
+  color: rgb(176, 175, 175);
+  margin: 10px;
+}
+
+.note_column_content{
+  font-size: 20px;
+  margin-left: 10px;
+}
+
+.left_bottom_display_b{
+  width: 25vw;
+  margin-top: 15px;
+}
+
+.return_colomn{
+  font-size: 15px;
+  color: rgb(176, 175, 175);
+  padding: 10px;
+  text-decoration: none;
 }
 
 .right_display{
   background-color: #FFFBE9;
+  width: 30vw;
 }

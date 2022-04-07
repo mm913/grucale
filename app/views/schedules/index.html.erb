@@ -67,12 +67,16 @@
         <% @schedules.each do |schedule| %>
           <div class="future_event">
           <% if schedule.start_time > Time.now %>
+            <div class="author_image">
+            <%= image_tag schedule.user.image.variant(resize: '30x30') if schedule.user.image.attached? %>
+            </div>
             <%= schedule.start_time.strftime("%m月%d日(#{%w(日 月 火 水 木 金 土)[schedule.start_time.wday]})") %>
             <% if schedule.all_day == false %>
               <%= schedule.start_time.strftime("%H:%M") %>
             <% else %>
               <%= "終日" %>
             <% end %>
+  
             <div class="future_event_title">
             <%= link_to schedule.title, group_schedule_path(@group.id, schedule.id), class:"future_event_title" %>
             </div>

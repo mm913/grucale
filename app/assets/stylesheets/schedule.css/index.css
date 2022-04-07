@@ -63,13 +63,15 @@
   display: flex;
 }
 
+.author_image{
+  margin-right: 7px;
+}
 .future_event_title{
   color:#7691f3;
-  margin-left: 10px;
+  margin-left: 5px;
   text-decoration: none;
   padding-bottom: 5px;
 }
-
 
 .future_event_title:hover{
   color: #e76c6c;

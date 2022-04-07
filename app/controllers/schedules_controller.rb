@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
-  before_action :set_schedule, only: [:index, :create, :show]
+  before_action :set_group, only: [:index, :create, :show, :edit, :update]
+  before_action :set_schedule, only: [:show, :edit, :update]
 
   def index
     #@user = User.find(params[:user_id])
@@ -26,14 +27,27 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @schedule = Schedule.find(params[:id])
+  end
+
+  def edit 
+  end
+
+  def update     
+    if @schedule.update(schedule_parameter)
+      redirect_to group_schedule_path
+    else
+      render :edit
+    end
   end
 
   private
 
-  def set_schedule
-    #@schedule = Schedule.find(prams[:id])
+  def set_group
     @group = Group.find(params[:group_id])
+  end
+
+  def set_schedule
+    @schedule = Schedule.find(params[:id]) 
   end
 
   def schedule_parameter

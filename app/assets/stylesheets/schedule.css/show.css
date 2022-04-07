@@ -10,7 +10,7 @@
 }
 
 .left_top_display_a{
-  width: 45vw;
+  width: 43vw;
   display: flex;
   align-items: center;
 }
@@ -28,7 +28,48 @@
 }
 
 .left_top_display_btn{
-  background-color: rgb(24, 179, 187);
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+  width: 8vw;
+  padding: 15px;
+  font-size: 15px;
+}
+
+.edit_btn{
+  margin-bottom: 15px;
+  text-decoration: none;
+  padding: 5px;
+  width: 5vw;
+  color: black;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  background-color: #E3CAA5;
+}
+
+
+.edit_btn:hover{
+  color: #000000;
+  background-color: #b17349;
+  border: solid 2px #8e8773;
+}
+
+.delete_btn{
+  text-decoration: none;
+  padding: 5px;
+  width: 5vw;
+  color: black;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  background-color: #E3CAA5;
+}
+
+.delete_btn:hover{
+  color: #f26161;
+  background-color: #e9e3e3;
+  border: solid 2px #f54e4e;
 }
 
 .left_top_display_c{
@@ -108,11 +149,15 @@
   margin-top: 15px;
 }
 
-.return_colomn{
+.return_column{
   font-size: 15px;
   color: rgb(176, 175, 175);
   padding: 10px;
   text-decoration: none;
+}
+
+.return_column:hover{
+  color: #000000;
 }
 
 .right_display{

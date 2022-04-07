@@ -24,9 +24,12 @@
             <%= @schedule.user.name %>
           </div>
         </div>
+        <% if @schedule.user.id == current_user.id %>
         <div class="left_top_display_btn">
-        編集と削除ボタン
+        <%= link_to "編集", edit_group_schedule_path(@group.id, @schedule.id),  method: :get, class: "edit_btn", id: "edit_btn" %>
+        <%= link_to "削除", "#", class: "delete_btn", id: "delete_btn" %>
         </div>
+        <% end %>
       </div>
       <div class="left_top_bottom_display">
         <div class="left_top_display_d">
@@ -76,7 +79,7 @@
       </div>
       <div class="left_bottom_display_b">
         <div class="return_column">
-          <%= link_to "戻る", group_schedules_path(@group.id), class:"return_colomn" %>
+          <%= link_to "戻る", group_schedules_path(@group.id), class:"return_column" %>
         </div>
       </div>
     </div>

@@ -1,0 +1,26 @@
+.wday-0 {
+  color: #ff505c;
+}
+
+.wday-6 {  
+  color: #307de9;
+}
+
+.calendar-title{
+  font-size: 20px;
+  margin: 25px;
+}
+
+.simple_calendar_pn{
+  text-decoration: none;
+  color: #4f4f4f;
+  background-color: #E3CAA5;
+}
+
+.calendar-heading{
+  padding: 13px;
+  text-align: center;
+  color: #4f4f4f;
+  background-color: #E3CAA5;
+  border: 1px solid #dedede;
+}

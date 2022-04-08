@@ -1,0 +1,88 @@
+<%# 共通部分%>
+<%= render "share/header" %>
+<%# 共通部分ここまで%>
+
+<div class="top_display">
+  <div class="head_display">
+    <%= link_to @group.group_name, group_path(@group.id), class:"groupname" %>
+  </div>
+</div>
+
+<div class="bottom_display_a">
+  <div class="left_display">
+    <div class="simple_calendar">
+      <%= month_calendar events: @schedules do |date, schedules| %>
+        <%= date.day %> 
+      <%# スケジュールの表示 %>
+        <% schedules.each do |schedule| %>
+          <div>
+            <%= link_to schedule.title, group_schedule_path(@group.id, schedule.id), class:"event_title" %>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+
+    <%# 新規作成フォーム %>
+    <div class="new_schedule">
+      <span>◆ スケジュール作成 ◆</span>
+      
+      <%= form_with(model: [@group, @schedule], local: true) do |f| %>
+      <%# エラーメッセージの部分テンプレート%>
+      <%= render 'share/error_messages', model: f.object %>
+
+        <div class="title">
+          <%= f.text_field :title, class:"input-default", id:"title", placeholder:"タイトル" %>
+        </div>
+
+        <div class="time">
+          <%= f.label :start_time, "開始日時" %>
+          <%= f.datetime_select :start_time, class:"input-default", id:"start_time", placeholder:"開始日時"  %>
+        </div>
+
+        <div class="time">
+          <%= f.label :finish_time, "終了日時" %>
+          <%= f.datetime_select :finish_time,  class:"input-default", id:"finish_time", placeholder:"終了日時"  %>
+        </div>
+
+        <div class="all_day">
+          <%= f.label :all_day, "終日" %>
+          <%= f.check_box 'all_day', {:checked => false}, checked_value = 'true',unchecked_value = 'false' %>
+
+        <div class="note">
+          <%= f.text_area :note, class:"input-default", id:"note", placeholder:"備考"  %>
+        </div>
+
+        <div class="submit">
+          <%= f.submit %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%# 今後の予定を表示 %>
+<div class="bottom_display_b">
+  <div class="right_display">
+    <div class="event_index">
+      <span>《今後のスケジュール》</span>
+        <% @schedules.each do |schedule| %>
+          <div class="future_event">
+          <% if schedule.start_time > Time.now %>
+            <div class="author_image">
+            <%= image_tag schedule.user.image.variant(resize: '30x30') if schedule.user.image.attached? %>
+            </div>
+            <%= schedule.start_time.strftime("%m月%d日(#{%w(日 月 火 水 木 金 土)[schedule.start_time.wday]})") %>
+            <% if schedule.all_day == false %>
+              <%= schedule.start_time.strftime("%H:%M") %>
+            <% else %>
+              <%= "終日" %>
+            <% end %>
+  
+            <div class="future_event_title">
+            <%= link_to schedule.title, group_schedule_path(@group.id, schedule.id), class:"future_event_title" %>
+            </div>
+          <% end %>
+          </div>
+        <% end %>  
+    </div>
+  </div>
+</div>

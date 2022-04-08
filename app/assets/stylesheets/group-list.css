@@ -5,6 +5,7 @@
 
 .group{
   text-align: center;
+  margin: 20px;
 }
 
 .group_name{
@@ -16,7 +17,3 @@
   text-decoration: none;
 }
 
-.no-group{
-  text-align: center;
-  font-size: px;
-}

@@ -8,12 +8,12 @@
     <% @groups.each do |group| %>
       <% unless GroupUser.exists?(group_id: group.id, user_id: current_user.id) %>
         <ul class="result">
-          <li><%= link_to group.group_name, join_group_path(group.id), class: "group_list" %></li>
+          <li><%= link_to group.group_name, join_group_path(group.id), data: {confirm: "#{group.group_name}に参加しますか？"}, class: "group_list" %></li>
         </ul>
       <% else %>
       <ul class="result">
       <%# カレンダー機能実装後、遷移先を変更%>
-        <li><%= link_to group.group_name , "#", class: "group_list" %> 【参加済み】</li>
+        <li><%= link_to group.group_name ,group_schedules_path(group.id), class: "group_list" %> 【参加済み】</li>
       </ul>
       <% end %>
     <% end %>

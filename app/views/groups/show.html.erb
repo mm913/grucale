@@ -8,7 +8,7 @@
       <%= @group.group_name %>
     </div>
     <div class="created-date">
-      <%= "作成日： "+ @group.created_at.strftime('%Y/%m/%d') %>
+      <%= "作成日： "+ @group.created_at.strftime('%Y年%m月%d日') %>
     </div>
   </div>
   <div class="show_center">
@@ -17,7 +17,8 @@
         <%= @group.note %>
       </div>
     <div class="show_center_bottom">
-      <%= link_to "カレンダー表示", "#", class:"to_calendar" %>
+    <%# カレンダー表示のリンク先を変更%>
+      <%= link_to "カレンダー表示", group_schedules_path(@group.id), class:"to_calendar" %>
       <%= link_to "退会する", group_path(@group), method: :delete, class:"withdrawale" %>
     </div>
   </div>

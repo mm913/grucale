@@ -1,0 +1,91 @@
+<%# 共通部分%>
+<%= render "share/header" %>
+<%# 共通部分ここまで%>
+
+<div class="show_page">
+  <div class="left_display">
+    <div class="left_top_display">
+      <div class="left_top_top_display">
+        <div class="left_top_display_a">
+          <div class="title_column">
+            <%= @schedule.title %>
+          </div>
+        </div>
+        <div class="left_top_display_b">
+          <div class="image_column">
+            <%= image_tag @schedule.user.image.variant(resize: '80x80') if @schedule.user.image.attached? %>
+          </div>
+        </div>
+        <div class="left_top_display_c">
+          <div class="author_column">
+            <%= "作成者： " %>
+          </div>
+          <div class="user_column">
+            <%= @schedule.user.name %>
+          </div>
+        </div>
+        <% if @schedule.user.id == current_user.id %>
+        <div class="left_top_display_btn">
+        <%= link_to "編集", edit_group_schedule_path(@group.id, @schedule.id),  method: :get, class: "edit_btn", id: "edit_btn" %>
+        <%= link_to "削除", group_schedule_path(@group.id, @schedule.id), method: :delete, data: {confirm: "このスケジュールを削除しますか？"}, class: "delete_btn", id: "delete_btn" %>
+         
+        </div>
+        <% end %>
+      </div>
+      <div class="left_top_bottom_display">
+        <div class="left_top_display_d">
+          <div class="time_column">
+            <%= "START" %>
+          </div>
+          <div class="time_column_md">
+            <%= @schedule.start_time.strftime("%m月%d日(#{%w(日 月 火 水 木 金 土)[@schedule.start_time.wday]})") %>
+          </div>
+          <% if @schedule.all_day == false %>
+            <div class="time_column_hm">
+              <%= @schedule.start_time.strftime("%H:%M") %>
+            </div>
+          <% else %>
+            <div class="all_day_column">
+              <%= "終日" %>
+            </div>
+          <% end %>
+        </div>
+        <div class="left_top_display_e">
+          <% if @schedule.all_day == false %>
+            <div class="left_top_display_e2">
+              <div class="time_column">
+                <%= "FINISH" %>  
+              </div>   
+              <div class="time_column_md">
+                <%= @schedule.finish_time.strftime("%m月%d日(#{%w(日 月 火 水 木 金 土)[@schedule.start_time.wday]})") %>
+              </div>
+              <div class="time_column_hm">
+                <%= @schedule.finish_time.strftime("%H:%M") %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="left_bottom_display">
+      <div class="left_bottom_display_a">
+        <div class="note_column">
+          <div class="note_column_head">
+            <span>備考</span>
+          </div>
+          <div class="note_column_content">
+            <%= @schedule.note %>
+          </div>
+        </div>
+      </div>
+      <div class="left_bottom_display_b">
+        <div class="return_column">
+          <%= link_to "戻る", group_schedules_path(@group.id), class:"return_column" %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="right_display">
+   チャット
+  </div>
+</div>

@@ -15,34 +15,43 @@
 
 .g_note{
   font-size: 20px;
+  margin: 20px;
 }
 
 .show_center_bottom{
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 .to_calendar{
-  color: rgb(52, 104, 245);
+  
+  color: #000000;
+  background-color: #CEAB93;
+  border: solid 2px #8e8773;
   margin: 15px;
   padding: 7px;
-  border: 2px solid rgb(52, 104, 245);
   text-decoration: none;
 }
 
 .to_calendar:hover{
-  color: rgb(52, 104, 245);
+  color: #000000;
+  background-color: #b17349;
+  border: solid 2px #8e8773;
 }
 
 .withdrawale{
-  color: rgb(255, 62, 62);
+  font-size: 15px;
+  color: #000000;
+  background-color: #CEAB93;
+  border: solid 2px #8e8773;
   padding: 7px;
   margin: 20px;
-  border: 2px solid rgb(255, 62, 62);
   text-decoration: none;
 }
 
 .withdrawale:hover{
-  color: rgb(255, 62, 62);
+  color: #f26161;
+  background-color: #e9e3e3;
+  border: solid 2px #f54e4e;
 }
 
 .show_bottom{
@@ -55,6 +64,7 @@
   margin: 60px;
   padding: 10px 60px 10px 60px;
   border: 1px solid black;
+  background-color: #fcf8f8;
 }
 
 .member_list{
@@ -66,6 +76,11 @@
   text-decoration: none;
   color: black;
   margin: 10px;
+}
+
+.member{
+  font-size: 16px;
+  margin-bottom: 15px;
 }
 
 li{

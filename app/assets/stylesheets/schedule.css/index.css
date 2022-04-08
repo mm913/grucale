@@ -1,0 +1,84 @@
+.head_display{
+  padding: 20px;
+  background-color: white;
+}
+
+.groupname{
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.bottom_display_a{
+  display: flex;
+  background-color: white;
+}
+
+.left_display{
+  margin: 0 20px 40px 20px;
+  width: 75vw;
+}
+
+.event_title{
+  color: #4f4f4f;
+  text-decoration: none;
+}
+
+
+.event_title:hover{
+  color: #e76c6c;
+}
+
+.new_schedule{
+  margin-top: 10px; 
+  padding: 15px;
+  background-color: #f7efcd;
+}
+
+.title{
+  width: 500px;
+}
+
+.note{
+  width: 500px;
+}
+
+.bottom_display_b{
+  background-color: #FFFBE9;
+  margin: 0 20px 20px 0;
+}
+
+.right_display{
+  width: 25vw;
+}
+
+.event_index{
+  padding-top: 20px;
+  font-size: 17px;
+}
+
+.future_event{
+  padding: 0 10px;
+  margin-top: 3px;
+  font-size: 17px;
+  display: flex;
+}
+
+.author_image{
+  margin-right: 7px;
+}
+.future_event_title{
+  color:#7691f3;
+  margin-left: 5px;
+  text-decoration: none;
+  padding-bottom: 5px;
+}
+
+.future_event_title:hover{
+  color: #e76c6c;
+}
+
+.simple_calendar{
+  background-color: white;
+  text-decoration: none;
+  color: #4f4f4f;
+}

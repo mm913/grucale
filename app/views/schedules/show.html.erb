@@ -27,7 +27,7 @@
         <% if @schedule.user.id == current_user.id %>
         <div class="left_top_display_btn">
         <%= link_to "編集", edit_group_schedule_path(@group.id, @schedule.id),  method: :get, class: "edit_btn", id: "edit_btn" %>
-        <%= link_to "削除", "#", class: "delete_btn", id: "delete_btn" %>
+        <%= link_to "削除", group_schedule_path(@group.id, @schedule.id), method: :delete, class: "delete_btn", id: "delete_btn" %>
         </div>
         <% end %>
       </div>

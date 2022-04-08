@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
-  before_action :set_group, only: [:index, :create, :show, :edit, :update]
-  before_action :set_schedule, only: [:show, :edit, :update]
+  before_action :set_group, only: [:index, :create, :show, :edit, :update, :destroy]
+  before_action :set_schedule, only: [:show, :edit, :update, :destroy]
 
   def index
     #@user = User.find(params[:user_id])
@@ -38,6 +38,11 @@ class SchedulesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @schedule.destroy
+    redirect_to group_schedules_path(@group.id)
   end
 
   private

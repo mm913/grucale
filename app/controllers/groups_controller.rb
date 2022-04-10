@@ -1,11 +1,11 @@
 class GroupsController < ApplicationController
-  
+  before_action :set_group, only: [:join, :show, :destroy]
+
   def index
   end
 
   def new
     @group = Group.new
-    #@group.schedule.build
   end
 
   def create
@@ -23,19 +23,15 @@ class GroupsController < ApplicationController
   end
 
   def join
-    @group = Group.find(params[:id])
     @group.users << current_user
     @group.save
-    #カレンダー機能実装後、下記を変更
     redirect_to root_path
   end
 
   def show
-    @group = Group.find(params[:id])
   end
 
-  def destroy
-    @group = Group.find(params[:id])
+  def destroy  
     @group.users.delete(current_user)
     redirect_to root_path
   end
@@ -43,5 +39,9 @@ class GroupsController < ApplicationController
   private
   def group_params
     params.require(:group).permit(:group_name, :note, {user_id: []} )
+  end
+
+  def set_group
+    @group = Group.find(params[:id])
   end
 end

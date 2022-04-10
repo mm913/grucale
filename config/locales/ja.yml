@@ -7,3 +7,9 @@ ja:
       group:
         group_name: グループ名
         note: 備考
+      schedule:
+        title: タイトル
+        start_time: 開始日時
+        finish_time: 終了日時
+        all_time: 終日
+        note: 備考

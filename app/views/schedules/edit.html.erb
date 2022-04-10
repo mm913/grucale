@@ -14,19 +14,22 @@
       <%= f.text_field :title, class:"input-default", id:"title", placeholder:"タイトル" %>
     </div>
 
-    <div class="time">
-      <%= f.label :start_time, "開始日時" %>
-      <%= f.datetime_field :start_time, class:"input-default", id:"start_time", placeholder:"開始日時"  %>
-    </div>
+    <div class="time_display">
+      <div class="time">
+        <%= f.label :start_time, "開始日時" %>
+        <%= f.datetime_field :start_time, class:"input-default", id:"start_time", placeholder:"開始日時"  %>
+      </div>
 
-    <div class="time">
-      <%= f.label :finish_time, "終了日時" %>
-      <%= f.datetime_field :finish_time,  class:"input-default", id:"finish_time", placeholder:"終了日時"  %>
-    </div>
+      <div class="time">
+        <%= f.label :finish_time, "終了日時" %>
+        <%= f.datetime_field :finish_time,  class:"input-default", id:"finish_time", placeholder:"終了日時"  %>
+      </div>
 
-    <div class="all_day">
-      <%= f.label :all_day, "終日" %>
-      <%= f.check_box 'all_day', {:checked => false}, checked_value = 'true',unchecked_value = 'false' %>
+      <div class="all_day">
+        <%= f.label :all_day, "終日" %>
+        <%= f.check_box 'all_day', {:checked => false}, checked_value = 'true',unchecked_value = 'false' %>
+      </div>
+    </div>
 
     <div class="note">
       <%= f.text_area :note, class:"input-default", id:"note", placeholder:"備考"  %>

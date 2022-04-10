@@ -2,7 +2,7 @@ class Schedule < ApplicationRecord
   belongs_to :group
   belongs_to :user
 
-  validates :title, presence: true
+  validates :title, presence: true, length: { maximum: 24}
   validates :user_id, presence: true
   validates :group_id, presence: true
   validate :start_finish_check

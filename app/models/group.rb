@@ -1,5 +1,5 @@
 class Group < ApplicationRecord
-  validates :group_name, presence: true, length: { minimum: 6 }
+  validates :group_name, presence: true
   validates :group_name, uniqueness: { case_sensitive: false }
   validates :note, length: { maximum: 1000 }
   

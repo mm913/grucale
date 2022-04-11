@@ -10,11 +10,11 @@ class Schedule < ApplicationRecord
   validates :note, length: { maximum: 1000 }
 
   def start_finish_check
-    errors.add(:finish_time, "は開始時刻より遅い時間を選択してください") if self.start_time > self.finish_time
+    errors.add(:finish_time, "終了日時は開始時刻より遅い時間を選択してください") if self.start_time > self.finish_time
   end
 
   def start_check
-    errors.add(:start_time, "は現在の日時より遅い時間を選択してください") if self.start_time < Time.now
+    errors.add(:start_time, "開始日時は現在の日時より遅い時間を選択してください") if self.start_time < Time.now
   end
 
 end

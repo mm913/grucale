@@ -74,7 +74,11 @@
             <span>備考</span>
           </div>
           <div class="note_column_content">
-            <%= @schedule.note %>
+            <%if @schedule.note.nil? %>   
+              <%= @schedule.not e%> 
+            <% else %>
+              <%= safe_join(@schedule.note.split("\n"),tag(:br)) %>   
+            <%end %>
           </div>
         </div>
       </div>

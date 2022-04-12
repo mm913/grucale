@@ -20,6 +20,8 @@ class SchedulesController < ApplicationController
   end
 
   def show
+    @comments = @schedule.comments.includes(:user)
+    @comment = Comment.new
   end
 
   def edit 

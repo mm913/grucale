@@ -90,6 +90,31 @@
     </div>
   </div>
   <div class="right_display">
-   チャット
+    <div id="chat_display">
+      <% @schedule.comments.each do |comment| %>
+        <div class="chat_display_left">
+          <div class="chat_display_a">
+            <%= image_tag comment.user.image.variant(resize: '30x30') if schedule.user.image.attached? %>
+          </div>
+          <div calss="chat_display_b">
+            <%= comment.user.name %>
+          </div>
+        </div>
+        <div class="chat_display_right">
+          <div class="chat_display_c">
+            <%= comment.comment %>
+          </div>
+          <div class="chat_display_d">
+            <%= comment.created_at %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+    <% if user_signed_in? %>
+      <%= form_with model: [@group, @schedule, @comment], id: "comment-form" do |f| %>
+        <%= f.text_area :text , class: "comment-text", placeholder:"コメント" %>
+        <%= f.submit "送信", class: "comment-submit" %>
+      <% end %>
+    <% end %>
   </div>
 </div>

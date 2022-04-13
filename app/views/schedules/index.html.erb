@@ -38,11 +38,11 @@
           <div class="time_display">
             <div class="time">
               <%= f.label :start_time, "開始日時" %>
-              <%= f.datetime_field :start_time, value: Time.current.strftime('%Y-%m-%dT00:00')  %>
+              <%= f.datetime_field :start_time, class:"time_form", value: Time.current.strftime('%Y-%m-%dT00:00')  %>
             </div>
             <div class="time">
               <%= f.label :finish_time, "終了日時" %>
-              <%= f.datetime_field :finish_time, value: Time.current.strftime('%Y-%m-%dT00:00') %>
+              <%= f.datetime_field :finish_time, class:"time_form", value: Time.current.strftime('%Y-%m-%dT00:00') %>
             </div>
             <div class="all_day">
               <%= f.label :all_day, "終日" %>
@@ -51,7 +51,7 @@
           </div>
   
           <div class="note">
-            <%= f.text_area :note, class:"input-default", id:"note", placeholder:"備考"  %>
+            <%= f.text_area :note, class:"input-note", id:"note", placeholder:"備考"  %>
           </div>
 
           <div class="submit">

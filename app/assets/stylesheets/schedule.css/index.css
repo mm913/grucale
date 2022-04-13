@@ -55,13 +55,32 @@
   margin-right: 20px;
 }
 
+.time_form{
+  border: none;
+  height: 40px;
+} 
+
 .all_day{
   margin: 10px 0;
+  padding-top: 15px;
+  height: 30px;
 }
 
 .note{
   width: 500px;
   margin: 20px 0;
+}
+
+.input-note{
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  height: 120px;
+  transition: border-color 0.3s;
+  width: 100%;
 }
 
 .bottom_display_b{

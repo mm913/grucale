@@ -89,32 +89,35 @@
       </div>
     </div>
   </div>
+  <%# チャット画面 %>
   <div class="right_display">
-    <div id="chat_display">
+    <div class="chat_display">
       <% @schedule.comments.each do |comment| %>
         <div class="chat_display_left">
           <div class="chat_display_a">
-            <%= image_tag comment.user.image.variant(resize: '30x30') if schedule.user.image.attached? %>
+            <%= image_tag comment.user.image.variant(resize: '30x30') if comment.user.image.attached? %>
           </div>
           <div calss="chat_display_b">
             <%= comment.user.name %>
           </div>
+          <div class="chat_display_d">
+            <%= comment.created_at.strftime('%m月%d日 %H:%M')  %>
+          </div>
         </div>
         <div class="chat_display_right">
           <div class="chat_display_c">
-            <%= comment.comment %>
-          </div>
-          <div class="chat_display_d">
-            <%= comment.created_at %>
-          </div>
+            <%= safe_join(comment.comment.split("\n"),tag(:br)) %>
+          </div>   
         </div>
       <% end %>
     </div>
-    <% if user_signed_in? %>
-      <%= form_with model: [@group, @schedule, @comment], id: "comment-form" do |f| %>
-        <%= f.text_area :text , class: "comment-text", placeholder:"コメント" %>
-        <%= f.submit "送信", class: "comment-submit" %>
+    <div class="comment-form">
+      <% if user_signed_in? %>
+        <%= form_with model: [@group, @schedule, @comment], id: "comment-form" do |f| %>
+          <%= f.text_area :comment , class: "comment-text", placeholder:"コメント" %>
+          <%= f.submit "送信", class: "comment-submit" %>
+        <% end %>
       <% end %>
-    <% end %>
+    </div>
   </div>
 </div>

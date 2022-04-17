@@ -1,7 +1,7 @@
 class Schedule < ApplicationRecord
   belongs_to :group
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
 
   validates :title, presence: true, length: { maximum: 24}
   validates :user_id, presence: true

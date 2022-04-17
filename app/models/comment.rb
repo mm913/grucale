@@ -1,6 +1,6 @@
 class Comment < ApplicationRecord
   belongs_to :user
   belongs_to :schedule
+  belongs_to :group
 
-  validates :comment, length: { maximum: 500 }
 end

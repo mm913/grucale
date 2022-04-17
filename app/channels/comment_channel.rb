@@ -1,6 +1,10 @@
 class CommentChannel < ApplicationCable::Channel
   def subscribed
-    # stream_from "some_channel"
+    #binding.pry
+    #@group = Group.find(params[:group_id])
+    #@schedule = Schedule.find(params[:schedule_id])
+    #stream_for @schedule
+    stream_from "comment_channel"
   end
 
   def unsubscribed

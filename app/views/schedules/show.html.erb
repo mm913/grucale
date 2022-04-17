@@ -91,22 +91,22 @@
   </div>
   <%# チャット画面 %>
   <div class="right_display">
-    <div class="chat_display">
+    <div class="chat_display" id="comments">
       <% @schedule.comments.each do |comment| %>
         <div class="chat_display_left">
-          <div class="chat_display_a">
-            <%= image_tag comment.user.image.variant(resize: '30x30') if comment.user.image.attached? %>
+          <div class="chat_display_a" >
+            <%= image_tag comment.user.image.variant(resize: '30x30'), id: "user_image" if comment.user.image.attached? %>
           </div>
-          <div calss="chat_display_b">
-            <%= comment.user.name %>
+          <div class="chat_display_b">
+            <p class="chat_name" id="chat_name"><%= comment.user.name %> </p>
           </div>
           <div class="chat_display_d">
-            <%= comment.created_at.strftime('%m月%d日 %H:%M')  %>
+            <p class="chat_time" id="chat_time"><%= comment.created_at.strftime('%m月%d日 %H:%M') %></p>
           </div>
         </div>
         <div class="chat_display_right">
           <div class="chat_display_c">
-            <%= safe_join(comment.comment.split("\n"),tag(:br)) %>
+            <p class="chat_message" id="chat_message"><%= safe_join(comment.comment.split("\n"),tag(:br))%> </p>
           </div>   
         </div>
       <% end %>

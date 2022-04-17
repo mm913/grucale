@@ -1,10 +1,14 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
-    @group = Group.find(params[:group_id])
-    @schedule = Schedule.find(params[:schedule_id]) 
+    #@group = Group.find(params[:group_id])
+    #@schedule = Schedule.find(params[:schedule_id])
     if @comment.save
-      redirect_to group_schedule_path(@group.id, @schedule.id)
+      @time = @comment.created_at.strftime('%m月%d日 %H:%M')
+      @image = @comment.user.image
+      #CommentChannel.broadcast_to @schedule, { comment: @comment, user: @comment.user.id }
+      ActionCable.server.broadcast "comment_channel", {comment: @comment, user: @comment.user, time: @time, image: @image} 
+      #redirect_to group_schedule_path(@group.id, @schedule.id)
     end
   end
 

@@ -16,19 +16,12 @@ if(location.pathname.match(/\/schedules\/\d/)){
     },
 
     received(data) {
-      //const comment = ` <p>${data.comment.comment}</P>`
-      //const createdAt = `<p>${data.time }</p>`
-      //const name = `<p>${data.user.name}</p>`
-      //const image = document.getElementById('user_image')
-      const image = document.createElement('user_image')
-      image.HTMLImageElement
       const html = `
             <div class="chat_display_left">
             <div class="chat_display_a" >
-              <img id="user_image" src="${data.image}">
             </div>
             <div class="chat_display_b">
-              <p class="chat_name" id="chat_name">${data.user.name} </p>
+              <p class="chat_name" id="chat_name">${data.user.name}：</p>
             </div>
             <div class="chat_display_d">
               <p class="chat_time" id="chat_time">${data.time}</p>
@@ -43,7 +36,8 @@ if(location.pathname.match(/\/schedules\/\d/)){
     comments.insertAdjacentHTML('beforeend', html)  
     const commentForm = document.getElementById("comment-form")
     commentForm.reset();
-      // Called when there's incoming data on the websocket for this channel
+    // Called when there's incoming data on the websocket for this channel
+   
     }
   })
 }

@@ -17,5 +17,4 @@ class Schedule < ApplicationRecord
   def start_check
     errors.add(:start_time, "開始日時は現在の日時より遅い時間を選択してください") if self.start_time < Time.now
   end
-
 end

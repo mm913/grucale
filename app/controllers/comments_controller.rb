@@ -4,7 +4,7 @@ class CommentsController < ApplicationController
     #@group = Group.find(params[:group_id])
     #@schedule = Schedule.find(params[:schedule_id])
     if @comment.save
-      @time = @comment.created_at.strftime('%m月%d日 %H:%M')
+      @time = @comment.created_at.strftime('%Y年%m月%d日 %H:%M')
       @image = @comment.user.image
       #CommentChannel.broadcast_to @schedule, { comment: @comment, user: @comment.user.id }
       ActionCable.server.broadcast "comment_channel", {comment: @comment, user: @comment.user, time: @time, image: @image} 

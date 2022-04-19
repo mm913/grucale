@@ -1,13 +1,26 @@
 .mypage{
   display: flex;
+  background-color: #ffff;
 }
 
 .left-contents{
-  width: 40vw;
-  margin-top: 100px;
+  width: 30vw;
+  margin-top: 30px;
 }
 
 .image{
+  display: flex;
+  justify-content: center;
+}
+
+.mygroup{
+  margin: 30px;
+  padding: 15px;
+  background-color: #FFFBE9;
+  overflow: auto; 
+}
+
+p{
   display: flex;
   justify-content: center;
 }
@@ -23,10 +36,17 @@
 
 .user-name2{
   margin-top: 50px;
-  font-size: 40px;
+  font-size: 30px;
 }
 
 .user-department{
   font-size: 20px;
   margin: 40px 0px 40px 0px;
+  display: flex;
+  justify-content: left;
+}
+
+.mycalendar{
+  margin: 20px;
+  width: 50vw;
 }

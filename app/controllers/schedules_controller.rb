@@ -29,7 +29,7 @@ class SchedulesController < ApplicationController
 
   def update     
     if @schedule.update(schedule_parameter)
-      redirect_to group_schedule_path
+      redirect_to group_schedules_path(@group.id)
     else
       render :edit
     end

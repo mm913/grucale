@@ -6,7 +6,7 @@ class UsersController < ApplicationController
   
   def show
     @user = User.find(params[:id])
-    @schedules = Schedule.where(group_id: @user.groups.ids).order("start_time ASC")
+    @schedules = Schedule.where(group_id: current_user.groups.ids).order("start_time ASC")
     #@schedules = Schedule.joins(group: users).where("user.id?", @user.id)
     #@schedules = Schedule.where(group_id: params[:current_user_group_id]).(schedule_id: params[:current_user_group_schedule_id]).order("start_time ASC")
     #@group = Group.find(params[:id])

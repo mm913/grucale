@@ -27,23 +27,25 @@
       <p>プロフィール：<%= @user.department_name %></p>
     </div>
     <%# カレンダー %>
-    <div class="mycalendar">
-      <% if user_signed_in? && current_user == @user %>
-      <div class="mycalendar_2">
-        <p>マイカレンダー</p>
-      <div>
-      <div class="simple_calendar">
-          <%= month_calendar events: @schedules do |date, schedules| %>
-            <%= date.day %> 
-          <%# スケジュールの表示 %>
-            <% schedules.each do |schedule| %>
-              <div>
-                <%= link_to schedule.title, group_schedule_path(@group.id, schedule.id), class:"event_title" %>
-              </div>
+    <div class="my_schedule">
+      <div class="mycalendar">
+        <% if user_signed_in? && current_user == @user %>
+        <div class="mycalendar_2">
+          <p>マイカレンダー</p>
+        <div>
+        <div class="simple_calendar">
+            <%= month_calendar events: @schedules do |date, schedules| %>
+              <%= date.day %> 
+            <%# スケジュールの表示 %>
+              <% schedules.each do |schedule| %>
+                <div class="event_title2">
+                  <%= schedule.title %>
+                </div>
+              <% end %>
             <% end %>
-          <% end %>
-        </div>
-      <% end %>
+          </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

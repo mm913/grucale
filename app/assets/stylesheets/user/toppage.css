@@ -1,3 +1,8 @@
+.main{
+  background-color: #ffff;
+  height: 100vh;
+}
+
 .choose{
   display: flex;
   justify-content: center;

@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_group, only: :show
   
   def toppage   
   end
@@ -29,10 +28,6 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:department_name, :image)
-  end
-
-  def set_group
-    @group = Group.find(params[:id])
   end
 
 end

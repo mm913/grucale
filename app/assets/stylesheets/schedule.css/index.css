@@ -8,14 +8,19 @@
   text-decoration: none;
 }
 
+.bottom_display{
+  display: flex;
+  width: 100vw;
+  background-color: white;
+}
+
 .bottom_display_a{
   display: flex;
-  background-color: white;
 }
 
 .left_display{
   margin: 0 20px 40px 20px;
-  width: 75vw;
+  width: 70vw;
 }
 
 .event_title{
@@ -36,28 +41,58 @@
 
 .title{
   width: 500px;
+  margin: 10px 0;
+}
+
+.time_display{
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
 }
 
 .time{
   width: 170px;
+  margin-right: 20px;
+}
+
+.time_form{
+  border: none;
+  height: 40px;
+} 
+
+.all_day{
+  margin: 10px 0;
+  padding-top: 15px;
+  height: 30px;
 }
 
 .note{
   width: 500px;
+  margin: 20px 0;
+}
+
+.input-note{
+  background: #fafafa;
+  border: none;
+  border-bottom: 2px solid #e9e9e9;
+  color: #666;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  height: 120px;
+  transition: border-color 0.3s;
+  width: 100%;
 }
 
 .bottom_display_b{
-  background-color: #FFFBE9;
-  margin: 0 20px 20px 0;
+  background-color: #FFFBE9;;
+  margin: 0 5px 20px 0;
+  padding: 10px;
+  width: 26vw;
 }
 
-.right_display{
-  width: 25vw;
-}
-
-.event_index{
-  padding-top: 20px;
+p{
   font-size: 17px;
+  margin-bottom: 15px;
 }
 
 .future_event{
@@ -70,11 +105,16 @@
 .author_image{
   margin-right: 7px;
 }
+
 .future_event_title{
   color:#7691f3;
   margin-left: 5px;
   text-decoration: none;
   padding-bottom: 5px;
+  width: 100px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .future_event_title:hover{

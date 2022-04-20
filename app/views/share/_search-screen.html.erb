@@ -1,8 +1,8 @@
-<div class="search_display">
-  <div class="search_main">
-  <%= form_with(url: search_groups_path, local: true, method: :get, class: "search_form") do |form| %>
-    <%= form.text_field :keyword, placeholder: "グループを検索する", class: "search-input" %>
-    <%= form.submit "検 索", class: "search-btn" %>
-  <% end %>
+  <div class="search_display">
+    <div class="search_main">
+    <%= form_with(url: search_groups_path, local: true, method: :get, class: "search_form") do |form| %>
+      <%= form.text_field :keyword, placeholder: "グループを検索する", class: "search-input" %>
+      <%= form.submit "検 索", class: "search-btn" %>
+    <% end %>
+    </div>
   </div>
-</div>

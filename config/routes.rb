@@ -16,6 +16,8 @@ Rails.application.routes.draw do
     collection do
       get 'search'
     end
-    resources :schedules, only: [:index, :create, :show, :edit, :update, :destroy]
+    resources :schedules, only: [:index, :create, :show, :edit, :update, :destroy]do
+      resources :comments, only: :create
+    end
   end
 end

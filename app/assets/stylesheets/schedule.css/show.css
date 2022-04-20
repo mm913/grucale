@@ -17,7 +17,8 @@
 
 .title_column{
   padding: 20px;
-  font-size: 50px;
+  font-size: 40px;
+  line-height: 1.0;
 }
 
 .left_top_display_b{
@@ -158,9 +159,4 @@
 
 .return_column:hover{
   color: #000000;
-}
-
-.right_display{
-  background-color: #FFFBE9;
-  width: 30vw;
 }

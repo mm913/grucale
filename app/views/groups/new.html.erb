@@ -1,9 +1,8 @@
 <%# 共通部分%>
 <%= render "share/header" %>
 <%# 共通部分ここまで%>
-
 <%= form_with model: @group, class: 'registration-main', local: true do |f| %>
- <div class="form-wrapper-group">
+<div class="form-wrapper-group">
   <h3>グループ作成</h3>
 
   <%# エラーメッセージの部分テンプレート%>
@@ -13,7 +12,7 @@
     <div class='form-item'>
       <label class="form-text"></label>
     </div>
-    <%= f.text_field :group_name, class:"input-default", id:"group_name", placeholder:"グループ名 ※6文字以上" %>
+    <%= f.text_field :group_name, class:"input-default", id:"group_name", placeholder:"グループ名" %>
     <p class="caution">注）既に登録済みのグループ名は使用できません</P>
   </div>
   <div class="form-group">

@@ -5,24 +5,47 @@
 <div class="mypage">
   <div class="left-contents">
     <div class="image">
-   
-    <%= image_tag @user.image.variant(resize: '300x300'), class: 'profile-image' if @user.image.attached? %>
+      <%= image_tag @user.image.variant(resize: '150x150'), class: 'profile-image' if @user.image.attached? %>
     </div>
     <% if user_signed_in? && current_user.id == @user.id%>
     <%= link_to "マイページ編集",edit_user_path(:id), class: "compilation" %>
     <% end %>
+    <div class="mygroup">     
+      <% if user_signed_in? && current_user == @user %>
+      <p>【参加済みのグループ】</p>
+        <%# 共通部分%>
+        <%= render "share/group-list" %>
+        <%# 共通部分ここまで%>
+      <% end %>
+    </div>
   </div>
   <div class="right-contents">
     <div class="user-name2">
-      <p><%= @user.name %>のマイページ</p>
+      <span><%= @user.name %>のマイページ</span>
     </div>
     <div class="user-department">
       <p>プロフィール：<%= @user.department_name %></p>
     </div>
-    <% if user_signed_in? && current_user == @user %>
-      <%# 共通部分%>
-      <%= render "share/group-list" %>
-      <%# 共通部分ここまで%>
-    <% end %>
+    <%# カレンダー %>
+    <div class="my_schedule">
+      <div class="mycalendar">
+        <% if user_signed_in? && current_user == @user %>
+        <div class="mycalendar_2">
+          <p>マイカレンダー</p>
+        <div>
+        <div class="simple_calendar">
+            <%= month_calendar events: @schedules do |date, schedules| %>
+              <%= date.day %> 
+            <%# スケジュールの表示 %>
+              <% schedules.each do |schedule| %>
+                <div class="event_title2">
+                  <%= schedule.title %>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
 </div>

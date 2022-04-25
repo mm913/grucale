@@ -1,17 +1,13 @@
 class UsersController < ApplicationController
-  
+  before_action :set_user, except: :toppage
+  before_action :move_to_toppage, only: :show
+
   def toppage   
   end
   
   def show
-    @user = User.find(params[:id])
+    
     @schedules = Schedule.where(group_id: current_user.groups.ids).order("start_time ASC")
-    #@schedules = Schedule.joins(group: users).where("user.id?", @user.id)
-    #@schedules = Schedule.where(group_id: params[:current_user_group_id]).(schedule_id: params[:current_user_group_schedule_id]).order("start_time ASC")
-    #@group = Group.find(params[:id])
-    #@schedule = Schedule.where
-    #@schedule = Schedule.find(params[:schedule_id])
-    #@schedules = Schedule.all && current_user.groups == @schedule.group
   end
 
   def edit
@@ -28,6 +24,16 @@ class UsersController < ApplicationController
   private
   def user_params
     params.require(:user).permit(:department_name, :image)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
+
+  def move_to_toppage
+    if user_signed_in? && current_user.id != @user.id
+      redirect_to root_path
+    end
   end
 
 end

@@ -6,13 +6,12 @@
 |name                    |string  |null: false               |
 |email                   |string  |null: false, unique: true |
 |encrypted_password      |string  |null: false               |
-|affiliation_name        |string  |                          |
 |department_name         |string  |                          |
 
 ### Association
 - has_many :user_groups
 - has_many :groups, through: :user_groups
-- has_many :calendars
+- has_many :schedules
 - has_many :comments
 
 
@@ -22,14 +21,13 @@
 |Column              |Type     |Options                      |
 |--------------------|---------|-----------------------------|
 |group_name          |string   |null: false                  |
-|encrypted_password  |string   |null: false                  |
 |note                |string   |                             |
  
 
 ### Association
 - has_many :user_groups
 - has_many :users, through: :user_groups
-- has_one :calendars
+- has_one :schedules
 - has_many :comments
 
 
@@ -49,7 +47,7 @@
 
 
 
-## calendarsテーブル
+## schedulesテーブル
 
 |Column         |Type        |Options                         |
 |---------------|------------|--------------------------------|
@@ -63,7 +61,7 @@
 ### Association
 - belongs_to :user
 - belongs_to :group
-- has_many :comment
+- has_many :comments
 
 
 
@@ -72,14 +70,14 @@
 
 |Column         |Type        |Options                         |
 |---------------|------------|--------------------------------|
-|content        |string      |                                |
+|comment        |string      |                                |
 |user           |references  |null: false, foreign_key: true  |
 |group          |references  |null: false, foreign_key: true  |
-|calendar       |references  |null: false, foreign_key: true  |
+|schedule       |references  |null: false, foreign_key: true  |
 
 ### Association
 - belongs_to :user
 - belongs_to :group
-- belongs_to :calendar
+- belongs_to :schedule
 
 

@@ -1,12 +1,11 @@
 class UsersController < ApplicationController
-  before_action :set_user, except: :toppage
+  before_action :set_user, except: [:toppage, :edit]
   before_action :move_to_toppage, only: :show
 
   def toppage   
   end
   
   def show
-    
     @schedules = Schedule.where(group_id: current_user.groups.ids).order("start_time ASC")
   end
 

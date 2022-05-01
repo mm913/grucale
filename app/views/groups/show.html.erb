@@ -31,6 +31,11 @@
         <ul class="members">
           <% @group.users.each do |user| %>
             <div class="g_member">
+            <% if user.image == nil %>
+              <li class="member_image"><img src="no_image.jpeg"></li>
+            <% else %>
+              <li class="member_image"><%= image_tag user.image.variant(resize: '30x30') if user.image.attached? %></li>
+            <% end %>
             <li><%= user.name %></li>
             </div>
           <% end %>

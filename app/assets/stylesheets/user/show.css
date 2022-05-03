@@ -1,6 +1,7 @@
 .mypage{
   display: flex;
   background-color: #ffff;
+  height: 100vh;
 }
 
 .left-contents{
@@ -11,6 +12,10 @@
 .image{
   display: flex;
   justify-content: center;
+}
+
+.right-contents{
+  width: 70vw;
 }
 
 .mygroup{
@@ -52,7 +57,7 @@ p{
 
 .mycalendar{
   margin: 20px;
-  width: 50vw;
+  width: 70vw;
 }
 
 .event_title2{

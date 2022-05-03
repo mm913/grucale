@@ -11,7 +11,7 @@
 .bottom_display{
   display: flex;
   width: 100vw;
-  height: 200vh;
+  height: 1000px;
   background-color: white;
 }
 

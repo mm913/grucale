@@ -12,7 +12,7 @@ body {
   background: #fafafa;
   margin: 3em auto;
   padding: 0 1em;
-  max-width: 370px;
+  max-width: 700px;
 }
 
 h1 {
@@ -48,7 +48,8 @@ form {
 
 .button-panel {
   margin: 2em 0 0;
-  width: 100%;
+  margin: auto;
+  width: 30%;
 }
 
 .button-panel .button {

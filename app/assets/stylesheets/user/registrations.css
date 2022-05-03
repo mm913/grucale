@@ -97,3 +97,12 @@ form {
   text-decoration: none;
   color: #8c8c8c;
 }
+
+@media screen and (max-width: 480px){ 
+  form-wrapper {
+    background: #fafafa;
+    margin: 3em auto;
+    padding: 0 1em;
+    max-width: 100%;
+  }
+}

@@ -11,6 +11,7 @@
 .bottom_display{
   display: flex;
   width: 100vw;
+  height: 200vh;
   background-color: white;
 }
 
@@ -88,6 +89,7 @@
   margin: 0 5px 20px 0;
   padding: 10px;
   width: 26vw;
+  height: 870px;
 }
 
 p{

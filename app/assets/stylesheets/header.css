@@ -3,7 +3,8 @@
   background-color: #C2B092;
   justify-content: space-between;
   align-items: center;
-  height: 10vh;
+  height: 10%;
+  width: 100%;
 }
 
 .lists-left{

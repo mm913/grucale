@@ -73,3 +73,10 @@
 .no-group{
   font-size: 15px;
 }
+
+
+@media screen and (max-width: 480px){ 
+  main{
+    height: 100%;
+  }
+}

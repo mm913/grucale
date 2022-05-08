@@ -7,7 +7,6 @@
     <%= link_to @group.group_name, group_path(@group.id), class:"groupname" %>
   </div>
 </div>
-
 <div class="bottom_display">
   <div class="bottom_display_a">
     <div class="left_display">
@@ -25,16 +24,13 @@
 
       <%# 新規作成フォーム %>
       <div class="new_schedule">
-        <span>◆ スケジュール作成 ◆</span>
-        
+        <span>◆ スケジュール作成 ◆</span>      
         <%= form_with(model: [@group, @schedule], local: true) do |f| %>
         <%# エラーメッセージの部分テンプレート%>
         <%= render 'share/error_messages', model: f.object %>
-
           <div class="title">
             <%= f.text_field :title, class:"input-default", id:"title", placeholder:"タイトル" %>
           </div>
-
           <div class="time_display">
             <div class="time">
               <%= f.label :start_time, "開始日時" %>
@@ -49,11 +45,9 @@
               <%= f.check_box 'all_day', {:checked => false}, checked_value = 'true',unchecked_value = 'false' %>
             </div>
           </div>
-  
           <div class="note">
             <%= f.text_area :note, class:"input-note", id:"note", placeholder:"備考"  %>
           </div>
-
           <div class="submit">
             <%= f.submit %>
           </div>
@@ -82,8 +76,7 @@
             </div>
           <% end %>
         </div>
-      <% end %>       
-    
+      <% end %>        
   </div>
 </div>
 

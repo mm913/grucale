@@ -27,8 +27,7 @@
         <% if @schedule.user.id == current_user.id %>
         <div class="left_top_display_btn">
         <%= link_to "編集", edit_group_schedule_path(@group.id, @schedule.id),  method: :get, class: "edit_btn", id: "edit_btn" %>
-        <%= link_to "削除", group_schedule_path(@group.id, @schedule.id), method: :delete, data: {confirm: "このスケジュールを削除しますか？"}, class: "delete_btn", id: "delete_btn" %>
-         
+        <%= link_to "削除", group_schedule_path(@group.id, @schedule.id), method: :delete, data: {confirm: "このスケジュールを削除しますか？"}, class: "delete_btn", id: "delete_btn" %>      
         </div>
         <% end %>
       </div>
@@ -95,8 +94,6 @@
       <% @schedule.comments.each_with_index do |comment, index| id="each" %>
         <div class="chat_display_left">
           <div class="chat_display_a" >
-            <!-- <p class="index" id="index"><%= "#{index + 1}：" %></p> -->
-            <%#= image_tag comment.user.image.variant(resize: '30x30'), id: "user_image" if comment.user.image.attached? %>
           </div>
           <div class="chat_display_b">
             <p class="chat_name" id="chat_name"><%= comment.user.name %>： </p>

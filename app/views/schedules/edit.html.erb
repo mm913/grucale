@@ -1,7 +1,7 @@
 <%# 共通部分%>
 <%= render "share/header" %>
 <%# 共通部分ここまで%>
-<%# 新規作成フォーム %>
+
 <div class="edit_schedule">
 <div class="edit_page">
   <span>◆ スケジュール編集 ◆</span>
@@ -10,6 +10,7 @@
   <%# エラーメッセージの部分テンプレート%>
   <%= render 'share/error_messages', model: f.object %>
 
+  <%# 編集画面 %>
     <div class="title">
       <%= f.text_field :title, class:"input-default", id:"title", placeholder:"タイトル" %>
     </div>

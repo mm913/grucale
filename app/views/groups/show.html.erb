@@ -20,6 +20,7 @@
         <%= @group.note %>
       </div>
     <div class="show_center_bottom">
+    
     <%# カレンダー表示のリンク先を変更%>
       <%= link_to "カレンダー表示", group_schedules_path(@group.id), class:"to_calendar" %>
       <%= link_to "退会する", group_path(@group), method: :delete, class:"withdrawale" %>
